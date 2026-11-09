@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#203e34"><meta name="description" content="Drei getrennte Versuchsplätze zur Fotosynthese mit Wasserpest, eigenem Aufbau und manueller Bläschenzählung.">
+<title>Fotosynthese · Wasserpest</title><style>:root{--ink:#203b32;--muted:#707b70;--paper:#f4f3ec;--line:#dce2d5;--green:#315848;--accent:#d5e39f;--white:#fcfdf8;--shadow:0 12px 35px #263c2710;color-scheme:light;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #809e37;outline-offset:4px}button{border:1px solid var(--line);color:var(--ink);background:var(--white);border-radius:9px;min-height:44px;padding:10px 15px;font-weight:600;font-size:13px;transition:background .15s,transform .15s}button:hover:not(:disabled){background:#eaf0df}button:active:not(:disabled){transform:translateY(1px)}[hidden]{display:none!important}.topbar{height:88px;max-width:1560px;margin:auto;padding:0 38px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font:25px Georgia,serif;letter-spacing:-.5px}.brand>svg{width:39px;height:39px;fill:none;stroke:var(--green);stroke-width:1.2}.brand-sub{display:block;font:8px Arial,sans-serif;letter-spacing:2.3px;margin-top:5px}.header-actions{display:flex;align-items:center;gap:20px}.draft{font-size:11px;color:#738060;border:1px solid #d5dfc3;padding:6px 10px;border-radius:20px;background:#edf1e3}.quiet{background:transparent}.quiet span{margin-left:10px}main{max-width:1560px;margin:auto;padding:30px 38px 12px}.intro{display:flex;align-items:center;justify-content:space-between;margin-bottom:29px}.eyebrow{font-size:9px;font-weight:700;letter-spacing:1.8px;color:var(--muted);margin:0 0 8px}h1{font:38px/1.15 Georgia,serif;letter-spacing:-1.2px;margin:0}h2{margin:0;font-size:17px;font-weight:600;letter-spacing:-.2px}.intro-note{font:14px/1.65 Georgia,serif;color:#72806c;text-align:right;margin:0}.laboratory{display:grid;grid-template-columns:minmax(0,1fr) 302px;gap:20px;align-items:start}.bench{overflow:hidden;border:1px solid #d7dfd1;background:#f9faf4;border-radius:17px;box-shadow:var(--shadow);position:sticky;top:18px}.bench-head{display:flex;align-items:center;justify-content:space-between;padding:21px 25px 18px}.bench-head h2{font:25px Georgia,serif}.run-status{display:flex;gap:7px;align-items:center;padding:7px 11px;background:#edf0e5;border:1px solid #dce2d3;font-size:11px;border-radius:20px;color:#6a765f}.run-status i,.specimen-tag i,.page-footer i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#98aa83}.run-status.active i{background:#4f7d40;box-shadow:0 0 0 3px #4f7d4016}.scene-wrap{position:relative;background:#e8ece2;overflow:hidden;aspect-ratio:1.5}.scene-wrap canvas{display:block;width:100%;height:100%}.scene-tools{position:absolute;top:16px;right:17px}.scene-tools button{display:flex;align-items:center;gap:7px;background:#fcfdf6d9;backdrop-filter:blur(5px);box-shadow:0 3px 10px #203b3207;font-size:11px;padding:8px 11px}.scene-tools button[aria-pressed=true]{background:#d9e6bd;border-color:#94a875}.scene-tools svg{height:18px;width:18px;fill:none;stroke:currentColor;stroke-width:1.4}.scene-bottom{position:absolute;bottom:16px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.specimen-tag{font-size:10px;color:#5c6a58;display:flex;align-items:center;gap:7px;padding:7px 9px;background:#f7faf0b8;border:1px solid #f9fbf295;border-radius:5px}.simulation-tag{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#7b8872}.bench-bottom{display:flex;align-items:center;gap:16px;min-height:87px;padding:18px 24px;background:#f9faf5}.primary{background:var(--ink);border-color:var(--ink);color:#fff}.primary:hover:not(:disabled){background:#3a5c4d}.play-icon{display:inline-block;font-size:12px;margin-right:8px}#bench-note{font-size:11px;line-height:1.5;color:var(--muted);flex:1}.icon-button{font-size:25px;padding:4px;width:44px;background:transparent;flex:none}.instruments{display:grid;gap:12px}.instrument{border:1px solid var(--line);border-radius:13px;background:var(--white);padding:18px 20px}.instrument-title{display:flex;align-items:center;gap:10px;margin-bottom:18px}.instrument-title .eyebrow{font-size:8px;margin-bottom:5px;letter-spacing:1.5px}.instrument-title h2{font-size:16px}.instrument-icon{width:34px;height:34px;background:#eef2e7;border:1px solid #e2e9d9;display:grid;place-items:center;border-radius:8px;flex:none;color:#617b48}.sun{font-size:25px}.molecule{font-size:11px;font-weight:700}.thermometer svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.4}.switch{margin-left:auto;min-height:25px;width:42px;padding:3px;border-radius:14px;background:#dfe4d8;border:0;flex:none}.switch span{display:block;background:white;width:19px;height:19px;border-radius:50%;box-shadow:0 1px 3px #0002;transition:transform .15s}.switch[aria-checked=true]{background:#526f47}.switch[aria-checked=true] span{transform:translateX(17px)}.value-line{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}.value-line label{color:var(--muted);font-size:11px}.value-line output{font-size:23px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}.value-line output small{font-size:12px;letter-spacing:0;color:var(--muted);margin-left:2px}input[type=range]{display:block;width:100%;height:24px;margin:2px 0 0;accent-color:#557744;cursor:pointer;touch-action:pan-y}input[type=range]::-webkit-slider-runnable-track{height:5px;background:linear-gradient(to right,#6c8755 var(--fill,55%),#e1e7d8 var(--fill,55%));border-radius:8px}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;border:3px solid #fff;background:#4b6d3f;border-radius:50%;height:19px;width:19px;box-shadow:0 0 0 1px #94a77e;margin-top:-7px}input[type=range]{appearance:none;background:none}input[type=range]::-moz-range-track{height:5px;background:#dfe6d4}input[type=range]::-moz-range-thumb{border:3px solid white;background:#4b6d3f;border-radius:50%;height:13px;width:13px}.range-ends{display:flex;justify-content:space-between;font-size:9px;color:#929a89;margin-top:0}.actual-temperature{border-top:1px solid #e7ebdf;margin-top:12px;padding-top:11px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}.actual-temperature>span{display:flex;align-items:center;gap:6px}.actual-temperature i{display:block;width:5px;height:13px;border-radius:4px;background:#bc7955}.actual-temperature output{font:14px ui-monospace,Consolas,monospace;color:var(--ink);font-variant-numeric:tabular-nums}.stopwatch{background:#243e34;color:#f4f5e7;border-radius:13px;padding:18px 20px;box-shadow:var(--shadow)}.clock-heading{display:flex;align-items:center;justify-content:space-between}.clock-heading h2{font-size:12px;font-weight:500;letter-spacing:.2px}.clock-heading>span{font-size:9px;color:#b2c2a3}.time{display:block;font:39px/1.2 ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-1.5px;margin:13px 0 15px}.time>span{color:#a8bd97;font-size:25px}.clock-buttons{display:flex;gap:9px}.clock-buttons button{flex:1;background:#dce8b9;border-color:#dce8b9;color:#2b4432;font-size:11px;min-height:38px;padding:7px}.clock-buttons button+button{background:transparent;border-color:#60715b;color:#ced8c6}.clock-buttons button:hover:not(:disabled){background:#e8f2cf;color:#2b4432}.page-footer{display:flex;justify-content:space-between;font-size:10px;color:#8a9381;padding:18px 1px}.page-footer>span:first-child{display:flex;align-items:center;gap:6px}.visibility-message{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:13px 18px;white-space:nowrap;background:#fafcf0e8;border:1px solid #d4dec7;border-radius:10px;font-size:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}dialog{color:var(--ink);background:#fbfcf6;border:1px solid #d8e0ce;border-radius:17px;width:min(520px,calc(100% - 32px));padding:26px;box-shadow:0 30px 80px #10271933}dialog::backdrop{background:#172d2660;backdrop-filter:blur(3px)}.dialog-head{display:flex;justify-content:space-between;align-items:center}.close-dialog{font-size:26px;min-width:44px;background:transparent;border:0;padding:0}.dialog-head .eyebrow{margin:0}dialog h2{font:29px Georgia,serif;margin:10px 0 20px}dialog p{font-size:13px;line-height:1.65;color:#60705d}dialog .dialog-note{padding-top:12px;border-top:1px solid var(--line);font-size:11px}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+@media(min-width:1440px){.laboratory{grid-template-columns:minmax(0,1fr) 340px}.scene-wrap{aspect-ratio:1.47}.instrument{padding:20px 23px}.instruments{gap:14px}}
+@media(max-width:1030px){.topbar{padding:0 24px;height:76px}main{padding:25px 24px 10px}h1{font-size:33px}.laboratory{grid-template-columns:minmax(0,1fr) 260px;gap:14px}.instrument{padding:15px}.scene-wrap{aspect-ratio:1.05}.bench-head{padding:18px}.bench-bottom{padding:14px;gap:10px;flex-wrap:wrap}.bench-bottom .primary{font-size:12px}#bench-note{display:none}.icon-button{margin-left:auto}.instrument-title{gap:8px}.instrument-title h2{font-size:14px}.instrument-icon{width:30px;height:30px}.time{font-size:34px}}
+@media(max-width:760px){.topbar{padding:0 18px;height:72px}.brand{font-size:22px}.brand>svg{width:31px}.header-actions{gap:8px}.draft{font-size:9px}.quiet{padding:9px 11px}.header-actions .quiet{font-size:11px}.header-actions .quiet span{display:none}main{padding:24px 16px 12px}.intro{margin-bottom:20px}.intro-note{display:none}h1{font-size:31px}.laboratory{grid-template-columns:1fr}.bench{position:relative;top:auto}.scene-wrap{aspect-ratio:1.4}.bench-head{padding:17px 18px}.bench-head h2{font-size:23px}.bench-bottom{flex-wrap:nowrap}.scene-bottom{left:14px;right:14px;bottom:12px}.specimen-tag{font-size:8px}.scene-tools{top:12px;right:12px}.instruments{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.instrument{padding:16px}.instrument-title{margin-bottom:17px}.instrument-icon{display:none}.instrument-title h2{font-size:15px}.switch{width:39px}.switch[aria-checked=true] span{transform:translateX(14px)}.instrument-title .eyebrow{font-size:7px;letter-spacing:1px}.value-line label{font-size:10px}.value-line output{font-size:21px}.stopwatch{padding:18px}.time{font-size:32px}.clock-buttons{flex-direction:column;gap:6px}.clock-buttons button{min-height:40px}.page-footer{font-size:9px;gap:16px;line-height:1.5}.page-footer>span:last-child{text-align:right}}
+@media(max-width:390px){.header-actions .draft{display:none}h1{font-size:28px}.scene-wrap{aspect-ratio:1.14}.instrument{padding:13px}.value-line{display:block}.value-line output{display:block;margin:7px 0 2px}.instrument-title h2{font-size:13px}.time{font-size:28px}.stopwatch{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.compact-clock{display:none}
+@media(max-width:1030px){.stopwatch{display:none}.compact-clock{display:flex;align-items:center;gap:9px;background:#243e34;color:#f4f5e7;padding:13px 16px}.compact-clock>span{font-size:10px;color:#c1cdb5}.compact-clock output{font:25px ui-monospace,Consolas,monospace;letter-spacing:-1px;margin-right:auto}.compact-clock button{padding:9px 13px;font-size:11px;background:#dce8b9;border-color:#dce8b9;min-height:44px}.compact-clock button:last-child{font-size:22px;padding:4px 10px;background:transparent;color:#dce8b9;border-color:#60715b}.scene-wrap{aspect-ratio:1.5}}
+@media(max-width:760px){.instrument[data-factor=temperature]{grid-column:1/-1}.compact-clock output{font-size:23px}}
+/* Independent, learner-built workbenches. */
+.intro{margin-bottom:22px}.experiment-tabs{display:flex;gap:10px;margin:0 0 23px}.experiment-tabs button{display:flex;align-items:center;gap:12px;flex:1;min-height:65px;text-align:left;background:#f8faf2;border-color:#d7dfcb;padding:12px 18px}.experiment-tabs button[aria-current=true]{background:#28483a;border-color:#28483a;color:#f1f5e6}.experiment-tabs small{display:block;font-size:8px;font-weight:400;letter-spacing:1.3px;margin-bottom:6px;opacity:.65}.experiment-tabs strong{font-size:15px;font-weight:500}.tab-symbol{font:23px Georgia,serif;opacity:.7;width:32px}.laboratory{grid-template-columns:132px minmax(0,1fr) 255px;gap:17px}.materials{border:1px solid var(--line);border-radius:13px;padding:15px 10px;background:#f9faf5}.materials>.eyebrow{font-size:8px;letter-spacing:1.2px;text-align:center;margin-bottom:14px}#material-tray{display:grid;gap:7px}.material-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:73px;font-size:10px;font-weight:500;position:relative;padding:8px;background:#fffdf7;touch-action:none;user-select:none}.material-button svg{width:28px;height:28px;fill:none;stroke:#5e7853;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.material-button[aria-pressed=true]{background:#e4edce;border-color:#99ad75}.material-button.present::after{content:'';position:absolute;right:7px;top:7px;width:5px;height:5px;border-radius:50%;background:#799b57}.material-note{font-size:10px;line-height:1.5;color:var(--muted);margin:15px 3px 3px;text-align:center}.selected-material h2{font-size:15px;line-height:1.3}.selected-material p:not(.eyebrow){font-size:11px;line-height:1.55;color:var(--muted);margin:10px 0}.selected-material button{display:block;width:100%;font-size:11px;margin-top:8px}.device-state{margin:10px 0 0;font-size:10px;color:#8c967f}.thermometer-readout{padding:12px 16px}.thermometer-readout .actual-temperature{margin:0;padding:0;border:0}.empty-bench{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;color:#8e9b85}.empty-bench span{font:19px Georgia,serif;background:#f7faf0a6;border:1px dashed #b6c4aa;border-radius:12px;padding:32px 50px}.bench-feedback{font-size:12px;line-height:1.5;color:#546d42;background:#ecf1df;padding:13px 18px;border-top:1px solid #dbe3ce}.drag-ghost{position:fixed;z-index:100;pointer-events:none;background:#244d3ce8;color:#f4f8e9;padding:10px 14px;border-radius:8px;box-shadow:0 8px 20px #102e2429;font-size:12px;transform:translate(16px,14px)}#scene{touch-action:none;cursor:grab}#scene.placing{cursor:crosshair}#scene.dragging{cursor:grabbing}input[type=range]:disabled{opacity:.4;cursor:default}.bench-head{padding:18px 20px}.bench-head h2{font-size:23px}.bench-bottom{padding:15px 18px;min-height:80px}.scene-wrap{aspect-ratio:1.5}.page-footer{margin-left:149px}
+@media(min-width:1440px){.laboratory{grid-template-columns:145px minmax(0,1fr) 290px;gap:20px}.scene-wrap{aspect-ratio:1.5}}
+@media(max-width:1100px){.laboratory{grid-template-columns:minmax(0,1fr) 240px;gap:14px}.materials{grid-column:1/-1;padding:12px}.materials>.eyebrow{text-align:left;margin-bottom:8px}#material-tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}.material-button{min-height:67px;font-size:9px}.material-button svg{width:24px;height:24px}.material-note{text-align:left;margin:10px 0 0;font-size:10px}.page-footer{margin-left:0}.instruments{grid-template-columns:1fr}.bench{position:relative;top:auto}}
+@media(max-width:760px){.laboratory{grid-template-columns:1fr}.experiment-tabs{gap:6px;margin-bottom:16px}.experiment-tabs button{padding:10px 9px;min-height:63px;gap:0}.experiment-tabs strong{font-size:12px}.experiment-tabs small{font-size:7px;letter-spacing:.5px}.tab-symbol{display:none}#material-tray{grid-template-columns:repeat(4,minmax(0,1fr))}.material-button{min-height:64px}.instruments{grid-template-columns:1fr 1fr;align-items:start}.selected-material{grid-row:span 2}.instrument[data-factor=temperature]{grid-column:auto}.thermometer-readout{grid-column:2}.intro h1{font-size:29px;line-height:1.15;max-width:340px}.empty-bench span{font-size:16px;padding:22px 32px}.bench-head h2{font-size:21px}.bench-feedback{font-size:11px}.compact-clock{padding:12px 15px}.compact-clock output{font-size:22px}.compact-clock button{padding:9px 11px}}
+.keyboard-marker{position:absolute;width:20px;height:20px;border:2px solid #5c7b3e;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;background:#f7ffe6a8;box-shadow:0 0 0 4px #54763615}.keyboard-marker::before,.keyboard-marker::after{content:'';position:absolute;background:#4b6833}.keyboard-marker::before{width:28px;height:1px;top:8px;left:-6px}.keyboard-marker::after{width:1px;height:28px;left:8px;top:-6px}
+/* Direct navigation beside the experiment controls, including narrow screens. */
+#experiment-switch{white-space:nowrap;background:#e4edce;border-color:#b2c299;font-size:12px}
+#experiment-switch>span{font-size:20px;line-height:1;vertical-align:-1px;margin-right:5px}
+#experiment-switch:hover{background:#d5e4b7}
+.experiment-choices{display:grid;gap:10px;margin-top:22px}
+.experiment-choices>button{display:flex;align-items:center;gap:16px;min-height:84px;width:100%;text-align:left;padding:15px 18px;background:#f3f6eb}
+.experiment-choices>button[aria-current=true]{background:#28483a;border-color:#28483a;color:#f3f6e9}
+.experiment-choices>button[aria-current=true]:hover{background:#345745}
+.choice-symbol{width:45px;font:27px Georgia,serif;text-align:center;opacity:.8;flex:none}
+.experiment-choices strong{display:block;font-size:16px;font-weight:600}
+.choice-status{display:block;font-size:11px;font-weight:400;margin-top:6px;opacity:.7}
+.choice-arrow{font-size:22px;margin-left:auto;opacity:.6}
+@media(max-width:760px){.bench-bottom{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px}.bench-bottom .primary{grid-column:1;grid-row:1}.bench-bottom #reset-open{grid-column:2;grid-row:1}.bench-bottom #experiment-switch{grid-column:1/-1;min-height:46px}.experiment-choices>button{gap:10px;padding:14px 12px}.choice-symbol{width:37px}.experiment-choices strong{font-size:15px}#experiment-dialog{padding:22px}}
+/* Optional orientation from the supplied worksheet; hidden until requested. */
+.guide-open{display:flex;align-items:center;gap:8px;flex:none;margin-left:24px;background:#edf2df;border-color:#bccba2;font-size:12px}
+.guide-open svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.guide-dialog{width:min(800px,calc(100% - 32px));max-height:calc(100dvh - 40px);padding:0;overflow:hidden}
+.guide-dialog[open]{display:flex;flex-direction:column}
+.guide-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:24px 28px 18px;border-bottom:1px solid var(--line);flex:none}
+.guide-heading h2{font:29px/1.15 Georgia,serif;letter-spacing:-.5px;margin:9px 0 0;max-width:570px}
+.guide-heading .eyebrow{font:700 8px Arial,sans-serif;letter-spacing:1.5px;line-height:1.5;margin:0}
+.guide-heading .close-dialog{flex:none;line-height:1;min-height:44px}
+.guide-body{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:0 28px 20px}
+.guide-body>p:first-child{margin:18px 0;font-size:13px}
+.inquiry-phases{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.guide-body .phase-section{font-size:10px;font-weight:700;letter-spacing:.7px;line-height:1.5;margin:18px 0 10px;color:#69765d}
+.guide-body .protocol-section{margin-top:24px;padding:12px 15px;background:#e0ebc8;border-left:3px solid #668148;border-radius:0 7px 7px 0;color:#314d35;font-size:12px;letter-spacing:0}
+.inquiry-phases.preparatory-phases li{background:#f5f5ef;border-color:#e4e5db}
+.inquiry-phases li{display:flex;align-items:center;gap:16px;padding:15px 18px;background:#f1f5e8;border:1px solid #dfe6d2;border-radius:10px}
+.phase-number{font:19px Georgia,serif;font-variant-numeric:tabular-nums;color:#758a56;flex:none;min-width:27px}
+.inquiry-phases h3{margin:0;font-size:14px;font-weight:600;line-height:1.5;letter-spacing:0}
+.inquiry-phases p{margin:4px 0 0;font-size:12px;line-height:1.55;color:#64725c}
+.guide-body .guide-source{font-size:10px;line-height:1.5;color:#88907e;margin:17px 0 0}
+.guide-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 28px;border-top:1px solid var(--line);background:#fbfcf6;flex:none}
+.guide-footer>span{font-size:10px;line-height:1.5;color:var(--muted);max-width:260px}
+.guide-footer button{flex:none;font-size:12px}
+@media(max-width:1100px){.intro h1{font-size:33px}.guide-open{margin-left:16px}}
+@media(max-width:760px){.intro{flex-direction:column;align-items:flex-start;gap:16px}.guide-open{margin-left:0;min-height:44px}.guide-dialog{max-height:calc(100dvh - 20px);width:calc(100% - 20px);border-radius:14px}.guide-heading{padding:18px;gap:8px}.guide-heading h2{font-size:23px;overflow-wrap:anywhere}.guide-heading .eyebrow{font-size:7px;letter-spacing:1px}.guide-body{padding:0 16px 18px}.inquiry-phases li{padding:13px 12px;gap:12px;align-items:flex-start}.inquiry-phases h3{font-size:13px}.phase-number{font-size:17px;line-height:1.5;min-width:23px}.guide-footer{padding:13px 16px;gap:12px}.guide-footer>span{max-width:145px;font-size:9px}.guide-footer button{font-size:11px;padding:10px 12px}}
+
+/* Contextual feedback stays separate from operation confirmations. */
+.learning-hint{padding:14px 18px;background:#fff5de;border-top:1px solid #e6d5aa;color:#65512c;font-size:12px;line-height:1.55}
+.learning-hint strong{font-size:11px;letter-spacing:.3px}.learning-hint p{margin:5px 0 0}
+.distance-reading{display:block}.distance-reading>span{display:block;color:var(--muted);font-size:11px;margin-bottom:9px}.distance-reading output{font-size:29px}
+.distance-note{font-size:11px;line-height:1.5;color:var(--muted);margin:12px 0 0}
+.material-button span{overflow-wrap:anywhere;max-width:100%}
+
+/* Fixed observation interval, with a readable one-pulse-per-second warning. */
+.measurement-rule{font-size:12px;line-height:1.6;margin:-8px 0 20px;color:#60705d}
+.timer-notice{font-size:11px;line-height:1.5;margin:0 0 13px;color:#d0dcc3;min-height:33px}
+.stopwatch.timer-warning,.compact-clock.timer-warning{animation:clock-warning 1s ease-in-out infinite}
+.stopwatch.timer-finished,.compact-clock.timer-finished{background:#554421;box-shadow:inset 0 0 0 2px #e4ba65}
+.timer-finished .timer-notice{color:#fff1cf;font-weight:600}
+@keyframes clock-warning{0%,100%{background-color:#243e34;box-shadow:inset 0 0 0 2px #e4ba65}50%{background-color:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
+@media(max-width:1030px){.compact-clock{flex-wrap:wrap}.compact-clock .timer-notice{flex:0 0 100%;margin:0;min-height:0;font-size:11px}.compact-clock #timer-compact-reset{font-size:22px;padding:4px 10px;background:transparent;color:#dce8b9;border-color:#60715b}}
+@media(prefers-reduced-motion:reduce){.stopwatch.timer-warning,.compact-clock.timer-warning{animation:none;background:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Wasserpest<span class="brand-sub">FOTOSYNTHESELABOR</span></span></a><div class="header-actions"><span class="draft">Vorversion</span><button class="quiet" id="model-open">Zum Modell ↗</button></div></header>
+<main>
+<section class="intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1>Außenfaktoren der Fotosynthese.</h1></div><button id="guide-open" class="guide-open" aria-haspopup="dialog" aria-controls="guide-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Erkenntnisweg</button></section>
+<nav class="experiment-tabs" aria-label="Einzelversuch wählen" id="experiment-tabs"></nav>
+<p class="measurement-rule">Jeder Versuchsdurchlauf dauert <strong>60 Sekunden</strong>. Ab 55 Sekunden blinkt das Stoppuhrfeld.</p>
+<div class="laboratory">
+ <aside class="materials" aria-label="Materialablage"><p class="eyebrow">MATERIALABLAGE</p><div id="material-tray"></div><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></aside>
+ <section class="bench" aria-labelledby="bench-title">
+  <header class="bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="bench-title">Lichtintensität</h2></div><span class="run-status" id="run-status"><i></i>Aufbau</span></header>
+  <div class="scene-wrap" id="scene-wrap"><canvas id="scene" tabindex="0" role="application" aria-label="Arbeitsfläche für deinen Versuchsaufbau" aria-describedby="assembly-help"></canvas><div class="empty-bench" id="empty-bench"><span>Deine Arbeitsfläche</span></div><div class="scene-tools"><button id="zoom-button" aria-pressed="false" disabled title="Schnittstelle vergrößern"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg><span>Nahansicht</span></button></div><div class="scene-bottom"><span class="specimen-tag" id="placement-label">Material frei platzieren</span><span class="simulation-tag">Simulation</span></div><div class="visibility-message" id="visibility-message" hidden>Versuch und Stoppuhr pausiert.</div></div>
+  <div class="bench-bottom"><button class="primary" id="run-button"><span class="play-icon" aria-hidden="true">▶</span><span id="run-label">Versuch starten</span></button><p id="bench-note">Eigener Versuchsaufbau</p><button id="experiment-switch" aria-haspopup="dialog" aria-controls="experiment-dialog"><span aria-hidden="true">⇄</span> Versuch wechseln</button><button class="icon-button" id="reset-open" aria-label="Diesen Versuchsplatz zurücksetzen" title="Diesen Versuchsplatz zurücksetzen">↺</button></div>
+  <div class="compact-clock" id="compact-clock" hidden aria-label="Stoppuhr"><span>Stoppuhr</span><output id="timer-compact-value">00:00,0</output><button id="timer-compact-toggle" disabled>Start</button><button id="timer-compact-reset" aria-label="Stoppuhr auf null zurücksetzen">↺</button><p class="timer-notice" id="timer-compact-notice">Messzeit: 60 Sekunden</p></div>
+  <p id="assembly-help" class="sr-only">Material auswählen und auf die Arbeitsfläche ziehen oder dort antippen. Geräte auf der Arbeitsfläche lassen sich verschieben. Mit der Tastatur: Material auswählen, Pfeiltasten für die Position, Enter zum Ablegen; Entf zum Zurücklegen.</p>
+  <aside class="learning-hint" id="learning-hint" role="status" aria-live="polite" hidden><strong>Denkanstoß</strong><p id="learning-hint-text"></p></aside>
+  <div class="bench-feedback" id="bench-feedback" role="status" aria-live="polite" hidden></div>
+ </section>
+ <aside class="instruments" aria-label="Geräte und Einstellungen">
+  <section class="instrument selected-material"><p class="eyebrow">AUSWAHL</p><h2 id="selected-name">Kein Material gewählt</h2><p id="selected-description">Die Arbeitsfläche ist frei gestaltbar.</p><button id="remove-material" class="quiet" hidden>Zurücklegen</button><button id="lamp-power" class="quiet" hidden aria-pressed="true">Leuchte ausschalten</button></section>
+  <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><p class="distance-note">Die Leuchte auf der Arbeitsfläche ziehen, um den Abstand zu verändern.</p><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
+  <section class="instrument" data-factor="carbon" aria-labelledby="carbon-title" hidden><div class="instrument-title"><div><p class="eyebrow">VERSUCHSWASSER</p><h2 id="carbon-title">CO₂-Gehalt</h2></div></div><div class="value-line"><label for="carbon">Relative Einstellung</label><output id="carbon-value" for="carbon">55 <small>%</small></output></div><input id="carbon" type="range" min="0" max="100" step="5" value="55" aria-label="Relativer CO₂-Gehalt in Prozent"><div class="range-ends"><span>0 %</span><span>100 %</span></div><p class="device-state" id="carbon-device-state">Nicht verbunden</p></section>
+  <section class="instrument" data-factor="temperature" aria-labelledby="temperature-title" hidden><div class="instrument-title"><span class="instrument-icon" aria-hidden="true">°C</span><div><p class="eyebrow">WASSERBAD</p><h2 id="temperature-title">Temperatur</h2></div></div><div class="value-line"><label for="temperature">Sollwert</label><output id="temperature-value" for="temperature">20 <small>°C</small></output></div><input id="temperature" type="range" min="5" max="45" step="1" value="20" aria-label="Solltemperatur des Wasserbads in Grad Celsius"><div class="range-ends"><span>5 °C</span><span>45 °C</span></div><p class="device-state" id="temperature-device-state">Nicht verbunden</p></section>
+  <section class="instrument thermometer-readout" id="thermometer-panel" hidden><div class="actual-temperature"><span><i></i>Thermometer</span><output id="actual-temperature">— °C</output></div></section>
+  <section class="stopwatch" id="stopwatch-panel" hidden aria-labelledby="timer-title"><div class="clock-heading"><h2 id="timer-title">Stoppuhr</h2><span id="timer-state">Bereit</span></div><output class="time" id="timer-value" aria-label="Verstrichene Messzeit">00:00<span>,0</span></output><p class="timer-notice" id="timer-notice">Messzeit: 60 Sekunden</p><div class="clock-buttons"><button id="timer-toggle" disabled>Start</button><button id="timer-reset" aria-label="Stoppuhr auf null zurücksetzen">Nullstellen</button></div></section>
+ </aside>
+</div>
+<footer class="page-footer"><span><i></i>Getrennte Versuchsplätze</span><span>Qualitatives Modell · Bläschen von Hand zählen</span></footer>
+</main>
+<dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title" aria-describedby="guide-description">
+ <header class="guide-heading"><div><p class="eyebrow">ORIENTIERUNG ZUM PROTOKOLLIEREN</p><h2 id="guide-title">Naturwissenschaftlicher Erkenntnisweg</h2></div><button class="close-dialog" data-close="guide-dialog" aria-label="Erkenntnisweg schließen" autofocus>×</button></header>
+ <div class="guide-body">
+  <p id="guide-description">Für dein Protokoll sind die Punkte <strong>4–10</strong> relevant. Die Punkte 1–3 dienen der Vorbereitung.</p>
+  <p class="phase-section" id="preparation-label">Vorüberlegungen · Punkte 1–3</p>
+  <ol class="inquiry-phases preparatory-phases" aria-labelledby="preparation-label">
+   <li><span class="phase-number" aria-hidden="true">01</span><h3>Betrachtung eines Phänomens</h3></li>
+   <li><span class="phase-number" aria-hidden="true">02</span><h3>Formulierung der chemischen Reaktion als Wort- oder Formelgleichung</h3></li>
+   <li><span class="phase-number" aria-hidden="true">03</span><h3>Messgröße für die Fotosyntheseaktivität</h3></li>
+  </ol>
+  <p class="phase-section protocol-section" id="protocol-label">Für dein Protokoll · ab Punkt 4</p>
+  <ol class="inquiry-phases" start="4" aria-labelledby="protocol-label">
+   <li><span class="phase-number" aria-hidden="true">04</span><h3>Fragestellung / Hypothese</h3></li>
+   <li><span class="phase-number" aria-hidden="true">05</span><div><h3>Planung des Versuchsaufbaus</h3><p>Dabei sollten Kontrollversuche eingeplant werden.</p></div></li>
+   <li><span class="phase-number" aria-hidden="true">06</span><div><h3>Durchführung des Versuchs und Beobachtung(en)</h3><p>Beschriftete Skizze des Versuchsaufbaus</p></div></li>
+   <li><span class="phase-number" aria-hidden="true">07</span><h3>Darstellung der Beobachtungen in Tabelle und / oder Diagramm</h3></li>
+   <li><span class="phase-number" aria-hidden="true">08</span><h3>Deutung</h3></li>
+   <li><span class="phase-number" aria-hidden="true">09</span><div><h3>Kritische Betrachtung</h3><p>Mögliche Fehlerquellen beim Versuchsaufbau; Verfälschungen bei der Art der Darstellung der Ergebnisse; usw.</p></div></li>
+   <li><span class="phase-number" aria-hidden="true">10</span><h3>Erstellung neuer Fragestellungen und Hypothesen anhand der neuen Erkenntnisse.</h3></li>
+  </ol>
+  <p class="guide-source">Phasen nach „Untersuchungen zur Enzymaktivität“, Seite 1. Die Messgröße ist hier auf die Fotosynthese bezogen.</p>
+ </div>
+ <footer class="guide-footer"><span>Beim Öffnen pausieren Versuch und Stoppuhr.</span><button class="primary" data-close="guide-dialog">Zurück zum Versuch</button></footer>
+</dialog>
+<dialog id="experiment-dialog" aria-labelledby="experiment-dialog-title" aria-describedby="experiment-dialog-description"><div class="dialog-head"><p class="eyebrow">EINZELVERSUCHE</p><button class="close-dialog" data-close="experiment-dialog" aria-label="Versuchsauswahl schließen">×</button></div><h2 id="experiment-dialog-title">Versuch wechseln</h2><p id="experiment-dialog-description">Deine Aufbauten bleiben beim Wechsel erhalten. Laufende Versuche und Stoppuhren pausieren.</p><div id="experiment-choices" class="experiment-choices"></div><div class="dialog-actions"><button class="quiet" data-close="experiment-dialog">Zurück zum Arbeitsplatz</button></div></dialog>
+<dialog id="model-dialog" aria-labelledby="model-title"><div class="dialog-head"><p class="eyebrow">ZUM MODELL</p><button class="close-dialog" data-close="model-dialog" aria-label="Schließen">×</button></div><h2 id="model-title">Eine virtuelle Wasserpest.</h2><p>Die drei Versuchsplätze besitzen jeweils einen eigenen Aufbau und eine eigene Stoppuhr. Beim Wechsel pausiert der bisherige Versuch; sein Aufbau bleibt bis zum Neuladen erhalten.</p><p>Das Bläschenverhalten ist ein qualitatives Modell, keine gemessene Datenreihe. Der Lampenabstand verändert die Beleuchtung im Modell. Der CO₂-Gehalt ist eine relative Modelleinstellung. Die CO₂-Skala ist keine Konzentrationsangabe in mg/l; Hydrogencarbonat wird nicht separat abgebildet.</p><p>Bei realen Versuchen können Bläschengröße und Gaszusammensetzung variieren. Das Temperaturverhalten ist nicht auf eine bestimmte Wasserpest-Art kalibriert. Die Zentimeteranzeige gehört zum virtuellen Aufbau; sie ist keine Kalibrierung einer realen Leuchte.</p><p class="dialog-note">Die Bläschen werden von Hand gezählt. Für Denkanstöße merkt sich die Oberfläche nur Einstellungen und Messzeiten bis zum Neuladen; sie erstellt kein Protokoll und speichert keine Bläschenzahlen.</p><button class="primary" data-close="model-dialog">Zurück zum Versuch</button></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-head"><p class="eyebrow">VERSUCHSPLATZ</p><button class="close-dialog" data-close="reset-dialog" aria-label="Schließen">×</button></div><h2 id="reset-title">Diesen Aufbau leeren?</h2><p>Nur der ausgewählte Einzelversuch wird zurückgesetzt. Die anderen Versuchsplätze bleiben erhalten.</p><div class="dialog-actions"><button class="quiet" data-close="reset-dialog">Abbrechen</button><button class="primary" id="reset-confirm">Zurücksetzen</button></div></dialog>
+<div class="drag-ghost" id="drag-ghost" hidden aria-hidden="true"></div>
+<div id="timer-announcement" class="sr-only" role="status" aria-live="polite"></div>
+<div id="status-message" class="sr-only" role="status" aria-live="polite"></div>
+<script>(()=>{
+"use strict";
+const {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lightAtDistance} = (()=>{
+// Shared apparatus geometry in the 960 × 640 logical scene.
+// Centimetres describe the virtual bench, not a calibrated real lamp.
+const VESSEL = Object.freeze({cx:571,cy:322,sx:96/290,sy:186/432});
+const LAMP_GEOMETRY = Object.freeze({cx:204,cy:366,scale:.8});
+function lampMeasurement(setup){
+ const jar=setup?.items?.beaker,lamp=setup?.items?.lamp;
+ if(!jar||!lamp)return null;
+ const direction=jar.x<lamp.x?-1:1;
+ const origin={x:lamp.x*960+direction*77,y:lamp.y*640-112};
+ const target={x:jar.x*960+(566.4-VESSEL.cx)*VESSEL.sx,y:jar.y*640+(217.6-VESSEL.cy)*VESSEL.sy};
+ return {origin,target,direction,distanceCm:Math.hypot(target.x-origin.x,target.y-origin.y )/32};
+}
+const lampDistanceCm=setup=>lampMeasurement(setup)?.distanceCm??null;
+function lightAtDistance(distanceCm){return distanceCm==null?0:100/(1+(Math.max(0,distanceCm)/10)**2);}
+
+return {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lightAtDistance};})();
+const {createSeries,beginObservation,finishObservation,seriesHint,changeHint} = (()=>{
+// Formative hints use only experimental settings and elapsed observation time.
+// Bubble counts, calculated rates and students' written results are never stored.
+// All functions return new state; keep one series per independent workbench.
+const FACTORS = new Set(['light', 'carbon', 'temperature']);
+const NUMERIC_KEYS = ['factorValue', 'light', 'carbon', 'temperature', 'lampDistanceCm'];
+const sameNumber = (a, b, tolerance = .05) =>
+  a === b || (Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) <= tolerance);
+
+function snapshot(condition) {
+  if (!condition || !FACTORS.has(condition.experimentId)) return null;
+  const copy = {experimentId: condition.experimentId};
+  for (const key of NUMERIC_KEYS) {
+    if (Number.isFinite(condition[key])) copy[key] = condition[key];
+  }
+  if (typeof condition.lampOn === 'boolean') copy.lampOn = condition.lampOn;
+  return copy;
+}
+
+function targetValue(condition) {
+  if (condition.experimentId === 'light' && condition.lampOn === false) return 'dark';
+  if (Number.isFinite(condition.factorValue)) return condition.factorValue;
+  if (condition.experimentId === 'light' && Number.isFinite(condition.lampDistanceCm)) {
+    return condition.lampDistanceCm;
+  }
+  return condition[condition.experimentId];
+}
+
+function comparable(a, b) {
+  if (!a || !b || a.experimentId !== b.experimentId) return false;
+  return NUMERIC_KEYS.every(key => sameNumber(a[key], b[key])) && a.lampOn === b.lampOn;
+}
+
+function changedControls(a, b) {
+  if (!a || !b || a.experimentId !== b.experimentId) return [];
+  const changed = [];
+  if (a.experimentId !== 'light' && (
+    !sameNumber(a.light, b.light) || !sameNumber(a.lampDistanceCm, b.lampDistanceCm) || a.lampOn !== b.lampOn
+  )) changed.push('die Lichtbedingungen');
+  if (a.experimentId !== 'carbon' && !sameNumber(a.carbon, b.carbon)) changed.push('den CO₂-Gehalt');
+  if (a.experimentId !== 'temperature' && !sameNumber(a.temperature, b.temperature)) changed.push('die Temperatureinstellung');
+  return changed;
+}
+
+const duringObservationHint = 'Während der Beobachtungszeit haben sich die Einstellungen verändert. Prüfe, welche Bedingungen während einer einzelnen Messung gleich bleiben sollten.';
+
+function createSeries() {
+  return {observations: [], active: null, lastIssue: ''};
+}
+
+function beginObservation(series, condition) {
+  return {...series, active: snapshot(condition), lastIssue: ''};
+}
+
+function changeHint(beforeCondition, afterCondition) {
+  const changed = changedControls(snapshot(beforeCondition), snapshot(afterCondition));
+  if (!changed.length) return '';
+  return `Du hast zusätzlich ${changed.join(' und ')} verändert. Wie könntest du prüfen, welcher Faktor für einen Unterschied verantwortlich ist?`;
+}
+
+// elapsedSeconds is this observation's duration, not the cumulative stopwatch
+// value. No minimum measurement duration or fixed number of settings is imposed.
+// invalidated records changes that were undone before the observation finished.
+function finishObservation(series, condition, elapsedSeconds) {
+  if (!series.active) return series;
+  const next = {...series, active: null, lastIssue: ''};
+  if (!Number.isFinite(elapsedSeconds) || elapsedSeconds <= 0) return next;
+  const end = snapshot(condition);
+  if (condition?.invalidated || !comparable(series.active, end)) {
+    return {...next, lastIssue: duringObservationHint};
+  }
+  const value = targetValue(end);
+  if (!(Number.isFinite(value) || value === 'dark')) return next;
+  const previous = series.observations.at(-1);
+  const observation = {condition: end, duration: elapsedSeconds};
+  const observations = [...series.observations, observation];
+  let lastIssue = previous ? changeHint(previous.condition, end) : '';
+  if (!lastIssue && previous && Math.abs(previous.duration - elapsedSeconds) > Math.max(1, previous.duration * .05)) {
+    lastIssue = 'Deine Beobachtungszeiten waren unterschiedlich lang. Überlege, wie du die gezählten Bläschen unter vergleichbaren Bedingungen erfassen kannst.';
+  }
+  return {...next, observations, lastIssue};
+}
+
+function seriesHint(series) {
+  if (series.lastIssue) return series.lastIssue;
+  const values = [];
+  for (const observation of series.observations) {
+    const value = targetValue(observation.condition);
+    // Nearby settings count as the same setpoint; repeating a measurement is
+    // useful but does not supply another position along the factor's range.
+    if (!values.some(known => sameNumber(known, value, .2))) values.push(value);
+  }
+  if (values.length === 2) {
+    return 'Du hast bisher zwei verschiedene Einstellungen untersucht. Was könntest du zwischen diesen Einstellungen noch untersuchen, um den Verlauf besser beurteilen zu können?';
+  }
+  return '';
+}
+
+return {createSeries,beginObservation,finishObservation,seriesHint,changeHint};})();
+const {CONFIG} = (()=>{
+// Qualitative model settings; the lamp position supplies the light input.
+const CONFIG = Object.freeze({
+  title: 'Fotosynthese · Wasserpest',
+  enabledFactors: ['light', 'carbon', 'temperature'],
+  defaults: {light: 55, carbon: 55, temperature: 20, lampOn: true},
+  ranges: {light:[0,100,5],carbon:[0,100,5],temperature:[5,45,1]},
+});
+
+return {CONFIG};})();
+const {MATERIALS,EXPERIMENTS,createAssembly,placeMaterial,moveMaterial,removeMaterial,validateAssembly,deriveSetup,setupHint} = (()=>{
+// Independent workbenches: placement constraints model the apparatus, not a
+// prescribed worksheet sequence. Planning hints never supply measurement results.
+const MATERIALS = Object.freeze([
+  {id:'beaker',label:'Schnappdeckelgläschen',kind:'equipment'},
+  {id:'water',label:'Wasser',kind:'content'},
+  {id:'plant',label:'Wasserpest',kind:'content'},
+  {id:'lamp',label:'LED-Leuchte',kind:'equipment'},
+  {id:'bath',label:'Wasserbad',kind:'equipment'},
+  {id:'thermometer',label:'Thermometer',kind:'equipment'},
+  {id:'stopwatch',label:'Stoppuhr',kind:'equipment'},
+  {id:'bottle',label:'CO₂-Vorrat',kind:'equipment'},
+].map(material=>Object.freeze(material)));
+
+const commonMaterials=['beaker','water','plant','lamp','bath','thermometer','stopwatch'];
+const EXPERIMENTS = Object.freeze([
+  {id:'light',title:'Lichtintensität',availableMaterials:Object.freeze([...commonMaterials])},
+  {id:'carbon',title:'CO₂-Gehalt',availableMaterials:Object.freeze([...commonMaterials,'bottle'])},
+  {id:'temperature',title:'Temperatur',availableMaterials:Object.freeze([...commonMaterials])},
+].map(experiment=>Object.freeze(experiment)));
+
+const materialById=new Map(MATERIALS.map(material=>[material.id,material]));
+const experimentById=new Map(EXPERIMENTS.map(experiment=>[experiment.id,experiment]));
+const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+const validPoint=point=>point&&Number.isFinite(point.x)&&Number.isFinite(point.y);
+// The small vessel's body and open rim are generous pointer targets. The sensor
+// test below uses the water itself instead, so touching nearby air is not enough.
+const inBeaker=(point,beaker)=>!!beaker&&Math.abs(point.x-beaker.x)<=145*VESSEL.sx/960+.012&&Math.abs(point.y-beaker.y)<=.16;
+const inBath=(point,bath)=>!!bath&&Math.abs(point.x-bath.x)<=.185&&Math.abs(point.y-bath.y)<=.15;
+const inJarWater=(point,beaker)=>!!beaker&&Math.abs(point.x-beaker.x)<=138*VESSEL.sx/960&&point.y>=beaker.y+(160-VESSEL.cy)*VESSEL.sy/640&&point.y<=beaker.y+(513-VESSEL.cy)*VESSEL.sy/640;
+const inBathWater=(point,bath)=>!!bath&&Math.abs(point.x-bath.x)<=.168&&point.y>=bath.y-.105&&point.y<=bath.y+.14;
+const copyState=state=>({...state,items:Object.fromEntries(Object.entries(state.items).map(([id,point])=>[id,{...point}]))});
+const result=(state,ok,message)=>({state,ok,message});
+
+function createAssembly(experimentId='light'){
+  if(!experimentById.has(experimentId))throw new RangeError('Unbekannter Einzelversuch.');
+  return {experimentId,items:{},water:false,bathWater:false,plant:false,carbonDoses:0};
+}
+
+function placeMaterial(state,id,point){
+  const material=materialById.get(id);
+  const experiment=experimentById.get(state.experimentId);
+  if(!material||!experiment?.availableMaterials.includes(id))return result(state,false,'Dieses Material steht an diesem Versuchsplatz nicht bereit.');
+  if(!validPoint(point))return result(state,false,'Wähle eine Stelle auf der Arbeitsfläche.');
+  if(material.kind==='content'){
+    const targetsJar=inBeaker(point,state.items.beaker);
+    // The jar wins overlapping targets, including when already full. A rejected
+    // drop must never fill a hidden, different vessel or change existing content.
+    if(id==='water'&&!targetsJar&&inBath(point,state.items.bath)){
+      if(state.bathWater)return result(state,false,'Das Wasserbad enthält bereits Wasser. Prüfe, welches Gefäß du gerade treffen möchtest.');
+      const next=copyState(state);next.bathWater=true;
+      return result(next,true,'Wasser in das Wasserbad gegeben.');
+    }
+    if(!targetsJar){
+      const message=id==='water'
+        ? 'Wasser braucht ein Gefäß. Prüfe, ob du die Öffnung des Gläschens oder die freie Fläche des Wasserbads triffst.'
+        : 'Prüfe, in welchem Gefäß die Wasserpest untersucht werden soll. Trifft dein Spross dieses Gefäß?';
+      return result(state,false,message);
+    }
+    if(state[id])return result(state,false,id==='water'?'Das Gläschen enthält bereits Wasser. Prüfe, welches Gefäß du gerade treffen möchtest.':'Im Gläschen befindet sich bereits ein Spross.');
+    const next=copyState(state);next[id]=true;
+    return result(next,true,id==='water'?'Wasser in das Gläschen gegeben.':'Wasserpest eingesetzt.');
+  }
+  const next=copyState(state);
+  next.items[id]={x:clamp(point.x,.1,.9),y:clamp(point.y,.28,id==='lamp'?.73:.8)};
+  // A small jar rests on the floor of a bath instead of floating at the drop
+  // height. Only the dragged piece settles; independent apparatus never moves.
+  const jar=next.items.beaker,bath=next.items.bath;
+  if((id==='beaker'||id==='bath')&&jar&&bath&&Math.abs(jar.x-bath.x)<=.13&&Math.abs(jar.y-bath.y)<=.17){
+    if(id==='beaker')jar.y=clamp(bath.y+.005,.28,.8);
+    else bath.y=clamp(jar.y-.005,.28,.8);
+  }
+  return result(next,true,material.label+(state.items[id]?' verschoben.':' aufgestellt.'));
+}
+
+function moveMaterial(state,id,point){
+  if(!state.items[id])return result(state,false,'Dieses Gerät steht noch nicht auf der Arbeitsfläche.');
+  return placeMaterial(state,id,point);
+}
+
+function removeMaterial(state,id){
+  if(!materialById.has(id))return result(state,false,'Dieses Material ist nicht vorhanden.');
+  const present=id==='water'?state.water||state.bathWater:id==='plant'?state.plant:!!state.items[id];
+  if(!present)return result(state,false,'Dieses Material ist nicht auf der Arbeitsfläche.');
+  const next=copyState(state);
+  if(id==='water'||id==='plant')next[id]=false;
+  else delete next.items[id];
+  if(id==='beaker'){next.water=false;next.plant=false;next.carbonDoses=0;}
+  if(id==='bath')next.bathWater=false;
+  // One reusable water supply serves both vessels; returning it empties both.
+  if(id==='water'){next.bathWater=false;next.carbonDoses=0;}
+  return result(next,true,id==='water'?'Wasser aus den Gefäßen entfernt.':materialById.get(id).label+' entfernt.');
+}
+
+function deriveSetup(state){
+  const {beaker,bath,thermometer,lamp,stopwatch,bottle}=state.items;
+  const bathAligned=!!beaker&&!!bath&&Math.abs(bath.x-beaker.x)<=.13&&Math.abs(beaker.y-bath.y-.005)<=.025;
+  const waterbathConnected=bathAligned&&!!state.bathWater;
+  const sensor=thermometer?{x:thermometer.x,y:thermometer.y+82/640}:null;
+  const thermometerInBeaker=!!sensor&&!!state.water&&inJarWater(sensor,beaker);
+  // A sensor physically inside the jar cannot also read the bath around it.
+  const sensorInsideJar=!!sensor&&inBeaker(sensor,beaker);
+  const thermometerInBath=!!sensor&&!sensorInsideJar&&!!state.bathWater&&inBathWater(sensor,bath);
+  return {
+    beakerPresent:!!beaker,
+    waterPresent:!!state.water,
+    plantPresent:!!state.plant,
+    bathPresent:!!bath,
+    bathWaterPresent:!!state.bathWater,
+    bathAligned,
+    waterbathConnected,
+    thermometerPresent:!!thermometer,
+    thermometerInBeaker,
+    thermometerInBath,
+    thermometerConnected:thermometerInBeaker||(thermometerInBath&&waterbathConnected),
+    lampPresent:!!lamp,
+    stopwatchPresent:!!stopwatch,
+    carbonSupplyPresent:!!bottle,
+  };
+}
+
+function validateAssembly(state){
+  if(!state.items.beaker)return {ok:false,message:'Prüfe, worin du deine Probe untersuchen möchtest.'};
+  if(!state.plant)return {ok:false,message:'Prüfe, ob an deinem Versuchsplatz schon ein Untersuchungsobjekt vorhanden ist.'};
+  if(!state.water)return {ok:false,message:'Prüfe, ob das Untersuchungsobjekt in einer geeigneten Umgebung liegt.'};
+  // Dark, room-temperature and externally timed controls remain legitimate.
+  // Incomplete temperature apparatus prompts reflection, not a forced recipe.
+  return {ok:true,message:'Versuch bereit.'};
+}
+
+function setupHint(state){
+  const d=deriveSetup(state),{beaker,lamp}=state.items;
+  if(d.thermometerPresent&&!d.thermometerConnected){
+    if(d.thermometerInBath&&!d.waterbathConnected)return 'Die Messspitze liegt im Wasserbad, das Gläschen hat aber noch keinen Wärmekontakt dazu. Welche Temperatur gehört zu deiner Probe?';
+    return 'Die Messspitze des Thermometers liegt nicht im Wasser deiner Probe oder eines verbundenen Wasserbads. Überlege, was das Thermometer an dieser Stelle messen würde.';
+  }
+  if(d.bathPresent&&!d.bathWaterPresent)return 'Das Wasserbad ist leer. Welches Medium könnte Wärme zwischen dem Wasserbad und dem Gläschen übertragen?';
+  if(d.bathPresent&&!d.bathAligned)return 'Gläschen und Wasserbad haben noch keinen Wärmekontakt. Betrachte ihre Lage: Wie könnte die Umgebung die Probe erwärmen oder abkühlen?';
+  if(beaker&&lamp&&Math.abs(beaker.x-lamp.x)<.11&&Math.abs(beaker.y-lamp.y)<.2)return 'Leuchte und Gläschen überlappen sich. Prüfe, ob die Geräte nebeneinander stehen und ein freier Lichtweg zur Wasserpest möglich ist.';
+  if(state.plant&&!state.water)return 'Betrachte die Umgebung der Wasserpest. Welche Bedingungen braucht sie, damit du austretende Bläschen beobachten kannst?';
+  if(state.experimentId==='temperature'&&d.plantPresent&&d.waterPresent&&!d.bathPresent)return 'Überlege, wie du die Temperatur deiner Probe gezielt verändern und während der Messung kontrollieren kannst.';
+  if(state.experimentId==='temperature'&&d.waterbathConnected&&!d.thermometerPresent)return 'Die Einstellung am Wasserbad ist noch keine Messung in der Probe. Woran könntest du erkennen, wann die gewünschte Temperatur erreicht ist?';
+  if(d.plantPresent&&d.waterPresent&&!d.lampPresent)return 'Ohne Leuchte untersuchst du eine Dunkelbedingung. Passt das zu deiner Fragestellung oder zu deinem Kontrollansatz?';
+  return '';
+}
+
+return {MATERIALS,EXPERIMENTS,createAssembly,placeMaterial,moveMaterial,removeMaterial,validateAssembly,deriveSetup,setupHint};})();
+const {MEASUREMENT_SECONDS,WARNING_SECONDS,bubbleTarget,createSimulation,createStopwatch,formatTime} = (()=>{
+const bound=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+// Every numeric response coefficient below is a chosen teaching-model parameter,
+// not a measurement, species calibration, or conversion to photosynthetic units.
+function bubbleTarget({light,carbon,temperature,lampOn}) {
+  const irradiance=lampOn?bound(light,0,100):0;
+  const fLight=1-Math.exp(-irradiance/30);
+  const c=bound(carbon,0,100);
+  const fCarbon=c/(c+16);
+  const t=bound(temperature,5,45);
+  const fTemp=Math.exp(-(((t-27)/14)**2));
+  const respiration=1.4*2**((t-20)/10);
+  return Math.max(0,60*Math.min(fLight,fCarbon*fTemp)-respiration);
+}
+function createSimulation({random=Math.random,settings={}}={}) {
+  let input={...CONFIG.defaults,...settings};
+  let temperature=20,rate=0,time=0,phase=0,nextThreshold=.9+random()*.2,remainder=0;
+  let bubbles=[],running=false,emitted=0;
+  const step=.05;
+  function set(key,value) {
+    if(key==='lampOn'){input.lampOn=!!value;return;}
+    if(!CONFIG.enabledFactors.includes(key)||!Number.isFinite(Number(value)))return;
+    const [min,max]=CONFIG.ranges[key]; input[key]=bound(Number(value),min,max);
+  }
+  function advance(dt) {
+    if(!running||!Number.isFinite(dt)||dt<=0)return;
+    remainder+=dt;
+    while(remainder+1e-9>=step){
+      remainder-=step; time+=step;
+      temperature+=(input.temperature-temperature)*(1-Math.exp(-step/9));
+      const target=bubbleTarget({...input,temperature});
+      rate+=(target-rate)*(1-Math.exp(-step/8));
+      if(rate<.02&&target===0){rate=0;phase=0;}
+      bubbles=bubbles.filter(b=>(b.age+=step)<b.duration);
+      phase+=rate/60*step;
+      while(phase>=nextThreshold){
+        phase-=nextThreshold; emitted++;
+        bubbles.push({age:0,duration:2.8+random()*.5,radius:4.6+random()*1.5,wobble:1.5+random(),phase:random()*Math.PI*2});
+        nextThreshold=.88+random()*.24;
+      }
+    }
+  }
+  function reset(){input={...CONFIG.defaults};temperature=20;rate=time=phase=remainder=emitted=0;bubbles=[];running=false;nextThreshold=.9+random()*.2;}
+  return {set,advance,reset,setRunning(value){running=!!value;},get running(){return running;},
+    snapshot(){return {settings:{...input},temperature,rate,time,bubbles:bubbles.map(b=>({...b})),emitted,running};}};
+}
+const MEASUREMENT_SECONDS=60;
+const WARNING_SECONDS=55;
+function createStopwatch(){
+  let elapsed=0,running=false;
+  return {
+    start(){if(elapsed<MEASUREMENT_SECONDS)running=true;},
+    stop(){running=false;},
+    reset(){elapsed=0;running=false;},
+    advance(dt){
+      if(!running||!Number.isFinite(dt)||dt<=0)return 0;
+      const accepted=Math.min(dt,MEASUREMENT_SECONDS-elapsed);
+      elapsed+=accepted;
+      // Fractional frame steps must finish at the same boundary as whole seconds.
+      if(elapsed>=MEASUREMENT_SECONDS-1e-9){elapsed=MEASUREMENT_SECONDS;running=false;}
+      return accepted;
+    },
+    get elapsed(){return elapsed;},
+    get running(){return running;},
+    get finished(){return elapsed===MEASUREMENT_SECONDS;},
+    get warning(){return elapsed>=WARNING_SECONDS-1e-9&&elapsed<MEASUREMENT_SECONDS;},
+    get remaining(){return MEASUREMENT_SECONDS-elapsed;},
+  };
+}
+function formatTime(seconds){const tenths=Math.floor((seconds+1e-7)*10);const minutes=Math.floor(tenths/600);return {main:String(minutes).padStart(2,'0')+':'+String(Math.floor(tenths/10)%60).padStart(2,'0'),fraction:String(tenths%10)};}
+
+return {MEASUREMENT_SECONDS,WARNING_SECONDS,bubbleTarget,createSimulation,createStopwatch,formatTime};})();
+const {createScene} = (()=>{
+const W = 960;
+const H = 640;
+const TIP = { x: W * .59, y: H * .34 };
+const SURFACE = H * .25;
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+const finite = (value, fallback) => Number.isFinite(value) ? value : fallback;
+const BEAKER = VESSEL;
+const BATH = { cx: 582, cy: 437, sx: .82, sy: .83 };
+const LAMP = LAMP_GEOMETRY;
+const HIT_SIZES = {
+  beaker: [.11, .32], lamp: [.24, .50], bath: [.37, .38],
+  thermometer: [.055, .32], stopwatch: [.14, .18], bottle: [.10, .24],
+};
+const itemPosition = (setup, id) => {
+  const p = setup?.items?.[id];
+  return p && Number.isFinite(p.x) && Number.isFinite(p.y) ? p : null;
+};
+const lensView = (setup, zoom) => {
+  const beaker = itemPosition(setup, 'beaker');
+  if (!zoom || !beaker) return { scale: 1, x: 0, y: 0 };
+  // The cut end and water surface are the same physical objects in both views.
+  const focusX = beaker.x * W + (TIP.x - BEAKER.cx) * BEAKER.sx;
+  const focusY = beaker.y * H + ((TIP.y + SURFACE) / 2 - BEAKER.cy) * BEAKER.sy;
+  return { scale: 3.6, x: W * .5 - focusX * 3.6, y: H * .35 - focusY * 3.6 };
+};
+
+// Rendering only: bubble production and the pedagogical response model live outside
+// this module. The stem tip and the beginning of every bubble path coincide exactly.
+function createScene(canvas) {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Die Versuchsansicht benötigt Canvas 2D.');
+  let disposed = false;
+  let width = 0;
+  let height = 0;
+  let ratio = 1;
+  let lastView = { setup: { items: {} }, zoom: false };
+
+  function ellipse(x, y, rx, ry, fill, stroke, line = 1) {
+    ctx.beginPath();
+    ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = line; ctx.stroke(); }
+  }
+  function line(points, color, weight = 1) {
+    ctx.beginPath();
+    ctx.moveTo(points[0][0], points[0][1]);
+    for (let i = 1; i < points.length; i++) ctx.lineTo(points[i][0], points[i][1]);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = weight;
+    ctx.stroke();
+  }
+  function rounded(x, y, w, h, r, fill, stroke, weight = 1) {
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, r);
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.lineWidth = weight; ctx.strokeStyle = stroke; ctx.stroke(); }
+  }
+
+  function backdrop() {
+    const bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#f2f5f0');
+    bg.addColorStop(.53, '#e8eeE7');
+    bg.addColorStop(1, '#dce5dc');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+    const daylight = ctx.createRadialGradient(530, 160, 15, 530, 160, 550);
+    daylight.addColorStop(0, 'rgba(255,255,250,.82)');
+    daylight.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = daylight;
+    ctx.fillRect(0, 0, W, H);
+    const bench = ctx.createLinearGradient(0, 486, 0, H);
+    bench.addColorStop(0, 'rgba(229,235,226,0)');
+    bench.addColorStop(.45, 'rgba(235,239,231,.7)');
+    bench.addColorStop(1, 'rgba(249,249,239,.85)');
+    ctx.fillStyle = bench;
+    ctx.fillRect(0, 460, W, 180);
+    line([[0, 583], [960, 583]], 'rgba(100,125,103,.055)');
+  }
+
+  function lamp(lit, light) {
+    ctx.save();
+    ctx.lineCap = 'round';
+    ellipse(204, 560, 142, 14, 'rgba(43,65,48,.09)');
+    const base = ctx.createLinearGradient(0, 529, 0, 558);
+    base.addColorStop(0, '#f6f7f1');
+    base.addColorStop(.35, '#e1e7df');
+    base.addColorStop(1, '#8d9e91');
+    rounded(88, 531, 215, 27, 13, base, '#adbbae');
+    rounded(103, 531, 183, 5, 3, 'rgba(255,255,255,.75)');
+    // The lamp moves freely; the source-to-stem distance uses the same geometry.
+    const stand = ctx.createLinearGradient(143, 0, 155, 0);
+    stand.addColorStop(0, '#71887a');
+    stand.addColorStop(.35, '#d7e0d7');
+    stand.addColorStop(.57, '#f7f8ef');
+    stand.addColorStop(1, '#6c8274');
+    rounded(145, 257, 13, 279, 5, stand);
+    ctx.beginPath();
+    ctx.moveTo(151, 278);
+    ctx.bezierCurveTo(150, 212, 195, 191, 233, 211);
+    ctx.lineWidth = 13;
+    ctx.strokeStyle = '#768c7c';
+    ctx.stroke();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = '#d1dace';
+    ctx.stroke();
+    ellipse(151, 308, 16, 10, '#425b4e', '#6e8775');
+    rounded(142, 297, 18, 9, 3, '#728b77');
+    ctx.translate(251, 220);
+    ctx.rotate(.12);
+    const shade = ctx.createLinearGradient(0, -51, 0, 52);
+    shade.addColorStop(0, '#78977d');
+    shade.addColorStop(.4, '#335844');
+    shade.addColorStop(.74, '#214b39');
+    shade.addColorStop(1, '#163c2c');
+    ctx.beginPath();
+    ctx.moveTo(-50, -25);
+    ctx.bezierCurveTo(-60, -9, -59, 12, -49, 26);
+    ctx.lineTo(49, 46);
+    ctx.bezierCurveTo(66, 31, 66, -31, 48, -46);
+    ctx.closePath();
+    ctx.fillStyle = shade;
+    ctx.fill();
+    ctx.strokeStyle = '#365642';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+    line([[-44, -23], [42, -42]], 'rgba(236,248,217,.31)', 2.3);
+    const mouth = ctx.createLinearGradient(45, 0, 67, 0);
+    mouth.addColorStop(0, '#ced6c8');
+    mouth.addColorStop(.5, '#f5f3dd');
+    mouth.addColorStop(1, '#718a70');
+    ellipse(50, 0, 17, 45, mouth, '#67846a', 2);
+    ellipse(54, 0, 11, 34, lit ? `rgba(255,249,208,${.45 + light * .005})` : '#bcc7b5');
+    ctx.restore();
+  }
+
+  function illumination(light, lampOn, lampAt, beakerAt, direction, measurement) {
+    if (!lampOn || light <= 0 || !lampAt) return;
+    const amount = light / 100;
+    const origin = measurement?.origin || { x: lampAt.x * W + direction * 77, y: lampAt.y * H - 112 };
+    const target = measurement?.target || (beakerAt
+      ? { x: beakerAt.x * W, y: beakerAt.y * H - 25 }
+      : { x: origin.x + direction * 370, y: origin.y + 40 });
+    const dx = target.x - origin.x, dy = target.y - origin.y;
+    const length = Math.max(1, Math.hypot(dx, dy));
+    const nx = -dy / length, ny = dx / length;
+    const beam = ctx.createLinearGradient(origin.x, origin.y, target.x, target.y);
+    beam.addColorStop(0, `rgba(255,246,170,${.18 * amount})`);
+    beam.addColorStop(.65, `rgba(255,249,194,${.1 * amount})`);
+    beam.addColorStop(1, 'rgba(255,251,223,0)');
+    ctx.beginPath();
+    ctx.moveTo(origin.x + nx * 29, origin.y + ny * 29);
+    ctx.lineTo(target.x + nx * 138, target.y + ny * 138);
+    ctx.lineTo(target.x - nx * 138, target.y - ny * 138);
+    ctx.lineTo(origin.x - nx * 29, origin.y - ny * 29);
+    ctx.closePath();
+    ctx.fillStyle = beam;
+    ctx.fill();
+  }
+
+  function bathBack(hasWater) {
+    ellipse(590, 558, 215, 23, 'rgba(36,68,47,.13)');
+    // Water jacket behind the inner vessel. Front is painted after the plant.
+    const rear = ctx.createLinearGradient(0, 325, 0, 549);
+    rear.addColorStop(0, 'rgba(210,231,222,.12)');
+    rear.addColorStop(1, 'rgba(145,190,175,.17)');
+    rounded(369, 326, 425, 224, 24, rear, 'rgba(125,157,141,.3)', 1.2);
+    ellipse(581.5, 328, 211, 34, 'rgba(240,250,244,.15)', 'rgba(255,255,255,.72)', 2);
+    if (hasWater) ellipse(582, 354, 207, 32, 'rgba(156,202,193,.34)', 'rgba(121,165,148,.62)', 1.3);
+    line([[374, 351], [374, 523]], 'rgba(255,255,255,.48)', 2);
+  }
+
+  function vesselBack(hasWater) {
+    const glass = ctx.createLinearGradient(426, 0, 716, 0);
+    glass.addColorStop(0, 'rgba(149,186,173,.18)');
+    glass.addColorStop(.1, 'rgba(252,255,250,.17)');
+    glass.addColorStop(.35, 'rgba(238,251,238,.06)');
+    glass.addColorStop(.8, 'rgba(252,255,248,.12)');
+    glass.addColorStop(1, 'rgba(110,157,139,.22)');
+    ctx.beginPath();
+    ctx.moveTo(426, 134);
+    ctx.lineTo(426, 508);
+    ctx.bezierCurveTo(426, 551, 716, 551, 716, 508);
+    ctx.lineTo(716, 134);
+    ctx.closePath();
+    ctx.fillStyle = glass;
+    ctx.fill();
+    if (hasWater) {
+    const water = ctx.createLinearGradient(0, SURFACE, 0, 527);
+    water.addColorStop(0, 'rgba(205,231,221,.1)');
+    water.addColorStop(.6, 'rgba(159,204,183,.16)');
+    water.addColorStop(1, 'rgba(107,168,139,.2)');
+    ctx.beginPath();
+    ctx.moveTo(431, SURFACE);
+    ctx.lineTo(431, 507);
+    ctx.bezierCurveTo(431, 541, 711, 541, 711, 507);
+    ctx.lineTo(711, SURFACE);
+    ctx.fillStyle = water;
+    ctx.fill();
+    ellipse(571, SURFACE, 140, 26, 'rgba(229,247,237,.16)', 'rgba(149,184,162,.45)', 1.1);
+    // The back half of the meniscus remains legible behind the shoot.
+    ctx.beginPath();
+    ctx.ellipse(571, SURFACE, 140, 26, 0, Math.PI, 2 * Math.PI);
+    ctx.lineWidth = 1.7;
+    ctx.strokeStyle = 'rgba(255,255,249,.85)';
+    ctx.stroke();
+    }
+    ellipse(571, 134, 145, 28, 'rgba(252,255,248,.1)', 'rgba(129,157,139,.3)', 1.4);
+  }
+
+  function leaf(x, y, direction, length, width, shade, bend, phase) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(direction);
+    const grad = ctx.createLinearGradient(0, -width / 2, 0, width / 2);
+    grad.addColorStop(0, shade === 0 ? '#547e35' : '#679347');
+    grad.addColorStop(.43, shade === 0 ? '#365f28' : '#4a7933');
+    grad.addColorStop(1, shade === 0 ? '#254c26' : '#325c2d');
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(length * .27, -width * .57, length * .77, -width * .54 + bend, length, bend);
+    ctx.bezierCurveTo(length * .71, width * .43 + bend, length * .27, width * .52, 0, 0);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(29,73,28,.48)';
+    ctx.lineWidth = .55;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(1, 0);
+    ctx.quadraticCurveTo(length * .54, -1 + bend * .35, length * .93, bend);
+    ctx.strokeStyle = shade ? 'rgba(175,200,107,.43)' : 'rgba(124,163,78,.35)';
+    ctx.lineWidth = .7;
+    ctx.stroke();
+    // Fine serrations appear as short tapered details, not fern leaflets.
+    for (let j = 2; j < 6; j++) {
+      const t = j / 7;
+      const spread = Math.sin(t * Math.PI) * width * .35;
+      line([[length * t, bend * t], [length * t + 3, -spread + bend * t]], 'rgba(172,197,115,.14)', .5);
+    }
+    ctx.restore();
+  }
+
+  function plant(time, light) {
+    ctx.save();
+    ctx.lineCap = 'round';
+    ellipse(576, 513, 46, 7, 'rgba(41,85,44,.13)');
+    // Irregular whorls of three simple, narrow leaves on one submerged shoot.
+    const nodes = [];
+    for (let i = 0; i < 13; i++) {
+      const y = 252 + i * 18.5;
+      const x = TIP.x + Math.sin(i * .49) * 6.3 + (i / 12) * 7;
+      const move = Math.sin(time * .45 + i * .47) * .65;
+      nodes.push({ x: x + move, y, i });
+    }
+    // Back leaves sit behind the stem and other leaves at the same node.
+    nodes.forEach(({x, y, i}) => {
+      const len = 28 + Math.sin(i * 1.71) * 5 + i * .55;
+      const angle = (i % 2 ? -1.2 : -2.0) + Math.sin(i) * .16;
+      leaf(x, y, angle, len * .91, 8.8, 0, -1.2, i);
+    });
+    ctx.beginPath();
+    ctx.moveTo(TIP.x, TIP.y);
+    ctx.bezierCurveTo(566, 272, 582, 294, 573, 339);
+    ctx.bezierCurveTo(559, 389, 579, 443, 578, 510);
+    ctx.lineWidth = 5.2;
+    ctx.strokeStyle = '#486e31';
+    ctx.stroke();
+    ctx.lineWidth = 1.25;
+    ctx.strokeStyle = 'rgba(158,186,88,.65)';
+    ctx.stroke();
+    nodes.forEach(({x, y, i}) => {
+      const len = 31 + Math.sin(i * 1.71) * 6 + i * .4;
+      leaf(x, y, -.49 + Math.sin(i * .67) * .15, len, 10.2, 1, -2.2, i);
+      leaf(x - 1, y + 1.6, Math.PI + .45 + Math.cos(i * .62) * .14, len * .92, 9.3, 1, 1.7, i);
+      ellipse(x, y, 3, 1.5, 'rgba(122,154,69,.7)');
+    });
+    // A visible pale cut surface is the sole origin of the gas bubbles.
+    ellipse(TIP.x, TIP.y + .6, 3.1, 1.6, '#c1c99b', '#668650', .7);
+    ctx.restore();
+  }
+
+  function gas(bubbles) {
+    for (const bubble of bubbles) {
+      const duration = Math.max(.001, finite(bubble.duration, 1.8));
+      const progress = clamp(finite(bubble.age, 0) / duration, 0, 1);
+      if (bubble.age < 0 || progress >= 1) continue;
+      const size = clamp(finite(bubble.radius, 5), 4, 7);
+      const sway = clamp(finite(bubble.wobble, 4), -8, 8);
+      const phase = finite(bubble.phase, 0);
+      const x = TIP.x + Math.sin(progress * Math.PI * 2.2 + phase) * sway * Math.sin(progress * Math.PI / 2);
+      const y = TIP.y - progress * (TIP.y - SURFACE);
+      const radius = size * (.72 + progress * .28);
+      const g = ctx.createRadialGradient(x - radius * .25, y - radius * .3, .4, x, y, radius);
+      g.addColorStop(0, 'rgba(255,255,255,.92)');
+      g.addColorStop(.33, 'rgba(239,255,249,.38)');
+      g.addColorStop(.72, 'rgba(201,233,218,.13)');
+      g.addColorStop(1, 'rgba(63,112,99,.64)');
+      ellipse(x, y, radius, radius * 1.04, g, 'rgba(51,104,90,.64)', .9);
+      ctx.beginPath();
+      ctx.arc(x - radius * .1, y - radius * .08, radius * .65, 3.55, 4.75);
+      ctx.strokeStyle = 'rgba(255,255,255,.96)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+  }
+
+  function vesselFront(hasWater) {
+    // Front glass is transparent enough to preserve individual bubble outlines.
+    const side = ctx.createLinearGradient(426, 0, 447, 0);
+    side.addColorStop(0, 'rgba(102,151,131,.22)');
+    side.addColorStop(.3, 'rgba(255,255,255,.57)');
+    side.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = side;
+    ctx.fillRect(426, 139, 21, 365);
+    const sideRight = ctx.createLinearGradient(691, 0, 716, 0);
+    sideRight.addColorStop(0, 'rgba(255,255,255,0)');
+    sideRight.addColorStop(.67, 'rgba(255,255,255,.34)');
+    sideRight.addColorStop(1, 'rgba(108,149,130,.25)');
+    ctx.fillStyle = sideRight;
+    ctx.fillRect(691, 137, 25, 371);
+    ctx.beginPath();
+    ctx.moveTo(426, 135);
+    ctx.lineTo(426, 508);
+    ctx.bezierCurveTo(426, 550, 716, 550, 716, 508);
+    ctx.lineTo(716, 135);
+    ctx.strokeStyle = 'rgba(100,143,123,.45)';
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(571, 134, 145, 28, 0, 0, Math.PI);
+    ctx.strokeStyle = 'rgba(255,255,249,.94)';
+    ctx.lineWidth = 4.2;
+    ctx.stroke();
+    ctx.lineWidth = .8;
+    ctx.strokeStyle = 'rgba(104,143,125,.48)';
+    ctx.stroke();
+    if (hasWater) {
+      ctx.beginPath();
+      ctx.ellipse(571, SURFACE, 140, 26, 0, 0, Math.PI);
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(255,255,255,.78)';
+      ctx.stroke();
+    }
+    ellipse(571, 513, 139, 23, null, 'rgba(245,255,244,.67)', 2.2);
+    // A thick, ungraduated snap rim distinguishes the small vial from a beaker.
+    ellipse(571, 134, 150, 29, null, 'rgba(85,125,108,.55)', 4.5);
+    ctx.beginPath();
+    ctx.ellipse(571, 145, 148, 29, 0, 0, Math.PI);
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = 'rgba(210,229,219,.84)';
+    ctx.stroke();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(95,132,114,.5)';
+    ctx.stroke();
+    rounded(442, 197, 6, 220, 3, 'rgba(255,255,255,.3)');
+    rounded(688, 204, 2, 277, 1, 'rgba(255,255,255,.23)');
+  }
+
+  function vialCap() {
+    // The loose snap cap rests beside the open glass; no volume scale is printed.
+    ellipse(898, 528, 137, 29, 'rgba(38,64,48,.11)');
+    const plastic = ctx.createLinearGradient(0, 491, 0, 534);
+    plastic.addColorStop(0, '#f8f6e9');
+    plastic.addColorStop(.55, '#e4e6da');
+    plastic.addColorStop(1, '#b2bdae');
+    rounded(766, 503, 264, 26, 12, plastic, '#9cae9e', 1.5);
+    ellipse(898, 502, 131, 26, '#eeefe3', '#b1bbaa', 2);
+    ellipse(898, 502, 115, 20, '#e4e8dc', 'rgba(155,171,152,.62)', 2);
+    ellipse(898, 499, 110, 16, null, 'rgba(255,255,248,.84)', 1.5);
+    for (let x = 781; x <= 1016; x += 12) {
+      line([[x, 511], [x, 521]], 'rgba(117,139,118,.36)', 1.4);
+    }
+  }
+
+  function restingCap(jarAt, bathAt) {
+    if (!jarAt) return;
+    const capHalfWidth = 137 * BEAKER.sx;
+    // A loose lid rests on the bench, outside the waterbath rather than inside it.
+    const support = bathAt || jarAt;
+    const halfWidth = bathAt ? 213 * BATH.sx : 150 * BEAKER.sx;
+    const bottom = bathAt ? (550 - BATH.cy) * BATH.sy : (534 - BEAKER.cy) * BEAKER.sy;
+    const center = support.x * W;
+    const gap = 15;
+    const toRight = center + halfWidth + gap + capHalfWidth;
+    const toLeft = center - halfWidth - gap - capHalfWidth;
+    const x = toRight + capHalfWidth <= W - 12 ? toRight : toLeft;
+    const y = support.y * H + bottom - 27 * BEAKER.sy;
+    placed({x:clamp(x, capHalfWidth + 12, W - capHalfWidth - 12)/W, y:clamp(y, 30, H - 25)/H},
+      {cx:898, cy:502, sx:BEAKER.sx, sy:BEAKER.sy}, vialCap);
+  }
+
+  function distanceRuler(setup) {
+    if (setup.experimentId !== 'light') return;
+    const measured = lampMeasurement(setup);
+    if (!measured) return;
+    const { origin, target, distanceCm } = measured;
+    const dx = target.x - origin.x, dy = target.y - origin.y;
+    const length = Math.max(1, Math.hypot(dx, dy));
+    // A parallel dimension line and extension lines show the measured endpoints.
+    const sign = dx >= 0 ? 1 : -1;
+    const normal = { x: -dy / length * sign, y: dx / length * sign };
+    const offset = 138;
+    const a = { x: origin.x + normal.x * offset, y: origin.y + normal.y * offset };
+    const b = { x: target.x + normal.x * offset, y: target.y + normal.y * offset };
+    // Keep the entire annotation inside the bench, even at the lower edge.
+    const shiftX = Math.max(18 - Math.min(a.x,b.x), Math.min(0, W - 18 - Math.max(a.x,b.x)));
+    const shiftY = Math.max(22 - Math.min(a.y,b.y), Math.min(0, H - 48 - Math.max(a.y,b.y)));
+    a.x += shiftX; b.x += shiftX; a.y += shiftY; b.y += shiftY;
+    ctx.save();
+    ctx.setLineDash([3, 5]);
+    line([[origin.x, origin.y], [a.x, a.y]], 'rgba(64,91,65,.38)', 1);
+    line([[target.x, target.y], [b.x, b.y]], 'rgba(64,91,65,.38)', 1);
+    ctx.setLineDash([]);
+    line([[a.x, a.y], [b.x, b.y]], '#5b7653', 1.5);
+    for (const p of [a, b]) line([[p.x-normal.x*5,p.y-normal.y*5],[p.x+normal.x*5,p.y+normal.y*5]], '#5b7653', 1.5);
+    ellipse(origin.x, origin.y, 2.5, 2.5, '#6d815b');
+    ellipse(target.x, target.y, 2.5, 2.5, '#6d815b');
+    const cx=clamp((a.x+b.x)/2, 70, W-70), cy=clamp((a.y+b.y)/2, 28, H-30);
+    rounded(cx-54, cy-16, 108, 32, 8, '#f7f8ee', '#bac8ad', 1);
+    ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='600 17px system-ui, sans-serif';ctx.fillStyle='#34523a';
+    ctx.fillText(distanceCm.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1})+' cm', cx, cy);
+    ctx.restore();
+  }
+
+  function bathFront(hasWater) {
+    const front = ctx.createLinearGradient(0, 355, 0, 555);
+    front.addColorStop(0, hasWater ? 'rgba(151,201,187,.10)' : 'rgba(238,247,240,.01)');
+    front.addColorStop(1, hasWater ? 'rgba(113,172,153,.18)' : 'rgba(222,235,225,.04)');
+    ctx.beginPath();
+    ctx.moveTo(370, 353);
+    ctx.lineTo(370, 527);
+    ctx.bezierCurveTo(372, 568, 792, 568, 793, 527);
+    ctx.lineTo(793, 353);
+    ctx.bezierCurveTo(778, 392, 384, 392, 370, 353);
+    ctx.fillStyle = front;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(143,174,155,.35)';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(582, 328, 211, 34, 0, 0, Math.PI);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(255,255,255,.65)';
+    ctx.stroke();
+    rounded(385, 384, 6, 137, 3, 'rgba(255,255,255,.5)');
+    rounded(775, 386, 4, 136, 2, 'rgba(255,255,255,.38)');
+  }
+
+  function waterTargets(setup) {
+    const jar=itemPosition(setup,'beaker'), bath=itemPosition(setup,'bath');
+    ctx.save();
+    ctx.setLineDash([5,4]);
+    if(bath){
+      const x=bath.x*W, y=bath.y*H+(328-BATH.cy)*BATH.sy;
+      ellipse(x,y,211*BATH.sx,34*BATH.sy,'rgba(211,239,231,.15)','#448477',1.7);
+    }
+    if(jar){
+      const x=jar.x*W, y=jar.y*H+(134-BEAKER.cy)*BEAKER.sy;
+      ellipse(x,y,151*BEAKER.sx,31*BEAKER.sy,'rgba(211,239,231,.25)','#3b7e6a',2);
+    }
+    ctx.setLineDash([]);
+    ctx.font='500 12px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+    if(bath){
+      const x=clamp(bath.x*W-125,51,W-51),y=bath.y*H+(328-BATH.cy)*BATH.sy-24;
+      rounded(x-47,y-11,94,22,5,'#f5f8ee','#b7cabb');ctx.fillStyle='#315f50';ctx.fillText('Wasserbad',x,y);
+    }
+    if(jar){
+      const x=clamp(jar.x*W,48,W-48), y=jar.y*H+(134-BEAKER.cy)*BEAKER.sy-24;
+      rounded(x-44,y-11,88,22,5,'#f5f8ee','#b7cabb');ctx.fillStyle='#315f50';ctx.fillText('Gläschen',x,y);
+    }
+    ctx.restore();
+  }
+
+  function thermometer(temperature) {
+    ctx.save();
+    ctx.lineCap = 'round';
+    ellipse(4, 98, 17, 4, 'rgba(43,74,51,.08)');
+    const tube = ctx.createLinearGradient(-8, 0, 8, 0);
+    tube.addColorStop(0, 'rgba(110,149,129,.45)');
+    tube.addColorStop(.36, 'rgba(255,255,250,.95)');
+    tube.addColorStop(.65, 'rgba(223,237,222,.55)');
+    tube.addColorStop(1, 'rgba(114,151,127,.55)');
+    rounded(-8, -91, 16, 185, 7, tube, 'rgba(103,140,115,.55)');
+    rounded(-2, -68, 4, 145, 2, '#d4dcd0');
+    const level = clamp((finite(temperature, 20) - 5) / 40, 0, 1);
+    rounded(-2, 74 - level * 134, 4, 5 + level * 134, 2, '#ad6954');
+    ellipse(0, 82, 4, 8, '#ad6954');
+    for (let i = 0; i < 15; i++) {
+      line([[3, -64 + i * 9], [i % 5 === 0 ? 8 : 6, -64 + i * 9]], 'rgba(53,91,67,.5)', .7);
+    }
+    rounded(-10, -99, 20, 15, 4, '#486955');
+    ctx.restore();
+  }
+
+  function stopwatch(elapsed) {
+    ctx.save();
+    ellipse(0, 57, 67, 10, 'rgba(42,66,47,.12)');
+    rounded(-9, -60, 18, 17, 4, '#4c6354');
+    rounded(-47, -44, 15, 13, 3, '#55775e');
+    rounded(31, -44, 15, 13, 3, '#b27855');
+    const shell = ctx.createLinearGradient(0, -47, 0, 52);
+    shell.addColorStop(0, '#dfe7dc');
+    shell.addColorStop(.5, '#b6c8b5');
+    shell.addColorStop(1, '#748f78');
+    rounded(-60, -43, 120, 98, 26, shell, '#77937b', 1.8);
+    rounded(-48, -22, 96, 42, 9, '#dce6d5', '#617e66', 1.5);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#375840';
+    ctx.font = '22px ui-monospace, monospace';
+    const seconds = Number.isFinite(elapsed) ? Math.max(0, Math.floor(elapsed)) : null;
+    const reading = seconds === null ? '–:––' : `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+    ctx.fillText(reading, 0, 0);
+    ctx.font = '8px sans-serif';
+    ctx.letterSpacing = '1px';
+    ctx.fillText('STOPPUHR', 0, 34);
+    ctx.restore();
+  }
+
+  function bottle() {
+    ctx.save();
+    ellipse(0, 79, 49, 9, 'rgba(42,67,44,.1)');
+    const glass = ctx.createLinearGradient(-40, 0, 40, 0);
+    glass.addColorStop(0, 'rgba(107,153,127,.45)');
+    glass.addColorStop(.23, 'rgba(248,255,242,.7)');
+    glass.addColorStop(.7, 'rgba(191,219,189,.36)');
+    glass.addColorStop(1, 'rgba(99,143,115,.55)');
+    ctx.beginPath();
+    ctx.moveTo(-18, -62);
+    ctx.lineTo(-18, -42);
+    ctx.bezierCurveTo(-18, -31, -39, -28, -39, -8);
+    ctx.lineTo(-39, 64);
+    ctx.quadraticCurveTo(-39, 77, -27, 77);
+    ctx.lineTo(27, 77);
+    ctx.quadraticCurveTo(39, 77, 39, 64);
+    ctx.lineTo(39, -8);
+    ctx.bezierCurveTo(39, -28, 18, -31, 18, -42);
+    ctx.lineTo(18, -62);
+    ctx.closePath();
+    ctx.fillStyle = glass;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(107,143,112,.6)';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+    rounded(-35, 7, 70, 65, 8, 'rgba(175,205,171,.18)');
+    rounded(-25, -72, 50, 19, 4, '#e6eadb', '#98ae95');
+    for (let i = -21; i < 25; i += 5) line([[i, -68], [i, -56]], 'rgba(98,132,98,.3)', 1);
+    rounded(-34, 12, 68, 42, 3, '#f2f0df', '#b5bba5');
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#456043';
+    ctx.font = 'bold 16px sans-serif';
+    ctx.fillText('CO₂', 0, 28);
+    ctx.font = '8px sans-serif';
+    ctx.fillText('QUELLE', 0, 43);
+    line([[-27, -22], [-27, 7]], 'rgba(255,255,255,.75)', 3);
+    ctx.restore();
+  }
+
+  function placed(position, original, draw, mirror = 1) {
+    if (!position) return;
+    ctx.save();
+    ctx.translate(position.x * W, position.y * H);
+    ctx.scale((original.sx ?? original.scale ?? 1) * mirror, original.sy ?? original.scale ?? 1);
+    ctx.translate(-(original.cx ?? 0), -(original.cy ?? 0));
+    draw();
+    ctx.restore();
+  }
+
+  function screenToWorld(clientX, clientY, options = lastView) {
+    const box = canvas.getBoundingClientRect();
+    const scale = Math.min(box.width / W, box.height / H);
+    if (!(scale > 0)) return { x: NaN, y: NaN };
+    const px = (clientX - box.left - (box.width - W * scale) / 2) / scale;
+    const py = (clientY - box.top - (box.height - H * scale) / 2) / scale;
+    const lens = lensView(options.setup, options.zoom);
+    return { x: (px - lens.x) / lens.scale / W, y: (py - lens.y) / lens.scale / H };
+  }
+
+  function hitTest(point, setup = lastView.setup) {
+    const x = Array.isArray(point) ? point[0] : point?.x;
+    const y = Array.isArray(point) ? point[1] : point?.y;
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    for (const id of ['thermometer', 'stopwatch', 'bottle', 'beaker', 'lamp', 'bath']) {
+      const p = itemPosition(setup, id);
+      if (!p) continue;
+      const [w, h] = HIT_SIZES[id];
+      if (Math.abs(x - p.x) <= w / 2 && Math.abs(y - p.y) <= h / 2) return id;
+    }
+    return null;
+  }
+
+  function render({ time = 0, light = 50, temperature = 20, lampOn = true, bubbles = [], running = false, zoom = false, setup = { items: {} }, stopwatchElapsed = null, pendingMaterial = null } = {}) {
+    if (disposed) return;
+    const box = canvas.getBoundingClientRect();
+    const nextRatio = clamp(finite(globalThis.devicePixelRatio, 1), 1, 2);
+    const nextWidth = Math.max(1, Math.round(box.width * nextRatio));
+    const nextHeight = Math.max(1, Math.round(box.height * nextRatio));
+    if (nextWidth !== width || nextHeight !== height || nextRatio !== ratio) {
+      width = nextWidth;
+      height = nextHeight;
+      ratio = nextRatio;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+    // A contain transform maintains the circular vessel and bubble proportions.
+    const scale = Math.min(width / W, height / H);
+    ctx.setTransform(scale, 0, 0, scale, (width - W * scale) / 2, (height - H * scale) / 2);
+    ctx.fillStyle = '#edf2e9';
+    ctx.fillRect(-W, -H, W * 3, H * 3);
+    backdrop();
+    lastView = { setup, zoom };
+    ctx.save();
+    const lens = lensView(setup, zoom);
+    ctx.translate(lens.x, lens.y);
+    ctx.scale(lens.scale, lens.scale);
+    const intensity = clamp(finite(light, 50), 0, 100);
+    const beakerAt = itemPosition(setup, 'beaker');
+    const lampAt = itemPosition(setup, 'lamp');
+    const bathAt = itemPosition(setup, 'bath');
+    const thermometerAt = itemPosition(setup, 'thermometer');
+    const stopwatchAt = itemPosition(setup, 'stopwatch');
+    const bottleAt = itemPosition(setup, 'bottle');
+    const direction = beakerAt && lampAt && beakerAt.x < lampAt.x ? -1 : 1;
+    illumination(intensity, lampOn, lampAt, beakerAt, direction, lampMeasurement(setup));
+    placed(lampAt, LAMP, () => lamp(lampOn, intensity), direction);
+    placed(bathAt, BATH, () => bathBack(!!setup.bathWater));
+    placed(beakerAt, BEAKER, () => {
+      vesselBack(!!setup.water);
+      if (setup.plant) plant(setup.water ? finite(time, 0) : 0, intensity);
+      if (setup.water && setup.plant) gas(Array.isArray(bubbles) ? bubbles : []);
+      vesselFront(!!setup.water);
+    });
+    placed(bathAt, BATH, () => bathFront(!!setup.bathWater));
+    restingCap(beakerAt, bathAt);
+    placed(thermometerAt, {}, () => thermometer(temperature));
+    placed(stopwatchAt, {}, () => stopwatch(stopwatchElapsed));
+    placed(bottleAt, {}, bottle);
+    if (!zoom) distanceRuler(setup);
+    if (pendingMaterial === 'water') waterTargets(setup);
+    ctx.restore();
+  }
+  return {
+    render,
+    hitTest,
+    screenToWorld,
+    destroy() { disposed = true; ctx.clearRect(0, 0, canvas.width, canvas.height); },
+  };
+}
+
+return {createScene};})();
+const $=id=>document.getElementById(id);
+const materialById=new Map(MATERIALS.map(m=>[m.id,m]));
+const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation(),stopwatch:createStopwatch(),settings:{...CONFIG.defaults},selected:null,pending:null,zoom:false,preview:null,cursor:{x:.55,y:.5},keyboard:false,series:createSeries(),observationStart:null,measurementChanged:false,timerPhase:'ready'});
+const benches=new Map(EXPERIMENTS.map(e=>[e.id,fresh(e.id)]));
+let activeId='light',last=performance.now(),lastReadout=0,scene=null,gesture=null;
+const current=()=>benches.get(activeId);
+const present=(b,id)=>id==='water'?(b.assembly.water||b.assembly.bathWater):id==='plant'?b.assembly.plant:!!b.assembly.items[id];
+const n1=n=>n.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+const symbols={light:'☼',temperature:'°C'};
+const experimentSymbol=(id,className)=>symbols[id]?'<span class="'+className+'" aria-hidden="true">'+symbols[id]+'</span>':'';
+const shapes={beaker:'<path d="M10 8v18q6 3 12 0V8M9 8h14V5H9zM10 24q6 3 12 0M11 3h10"/>',water:'<path d="M16 3C11 10 6 14 6 20a10 10 0 0 0 20 0c0-6-5-10-10-17Z"/><path d="M10 20q0 5 5 5"/>',plant:'<path d="M16 29V3m0 9C7 13 5 8 5 8q8-1 11 4Zm0 8C7 21 5 16 5 16q8-1 11 4Zm0 5c9 1 11-4 11-4q-8-1-11 4Zm0-8c9 1 11-4 11-4q-8-1-11 4Z"/>',lamp:'<path d="M4 28h18M10 28V13q0-7 7-7M17 3v8l10 3V1L17 3Z"/>',bath:'<path d="M3 14h26v13H3Zm3 6q3-4 6 0t6 0 6 0M8 13V5h16v8"/>',thermometer:'<path d="M13 20V5a3 3 0 0 1 6 0v15a6 6 0 1 1-6 0ZM16 8v17m6-17h4m-4 6h4"/>',stopwatch:'<circle cx="16" cy="18" r="11"/><path d="M16 7V2m-4 0h8m-4 9v8l5 3m4-15 3 3"/>',bottle:'<path d="M12 3h8v7l5 6v13H7V16l5-6V3Zm-2 0h12M9 20h14"/>'};
+const icon=id=>'<svg viewBox="0 0 32 32" aria-hidden="true">'+shapes[id]+'</svg>';
+$('experiment-tabs').innerHTML=EXPERIMENTS.map(e=>'<button data-experiment="'+e.id+'" aria-current="'+(e.id===activeId)+'">'+experimentSymbol(e.id,'tab-symbol')+'<span><small>EINZELVERSUCH</small><strong>'+e.title+'</strong></span></button>').join('');
+$('experiment-choices').innerHTML=EXPERIMENTS.map(e=>'<button data-switch-experiment="'+e.id+'">'+experimentSymbol(e.id,'choice-symbol')+'<span><strong>'+e.title+'</strong><small class="choice-status"></small></span><span class="choice-arrow" aria-hidden="true">→</span></button>').join('');
+$('material-tray').innerHTML=MATERIALS.map(m=>'<button class="material-button" data-material="'+m.id+'" aria-pressed="false" title="'+m.label+' auswählen und platzieren">'+icon(m.id)+'<span>'+m.label.replace('Schnappdeckelgläschen','Schnapp<wbr>deckel<wbr>gläschen')+'</span></button>').join('');
+const marker=document.createElement('div');marker.className='keyboard-marker';marker.hidden=true;marker.setAttribute('aria-hidden','true');$('scene-wrap').append(marker);
+try{scene=createScene($('scene'));}catch(e){$('bench-note').textContent=e.message;$('run-button').disabled=true;}
+function flash(message){$('bench-feedback').hidden=!message;$('bench-feedback').textContent=message;$('status-message').textContent=message;}
+function condition(b=current()){
+ const distance=lampDistanceCm(b.assembly),d=deriveSetup(b.assembly);
+ return {experimentId:b.assembly.experimentId,factorValue:b.assembly.experimentId==='light'?distance:b.assembly.experimentId==='temperature'?(d.waterbathConnected?b.settings.temperature:20):b.settings.carbon,light:lightAtDistance(distance),carbon:b.settings.carbon,temperature:d.waterbathConnected?b.settings.temperature:20,lampOn:d.lampPresent&&b.settings.lampOn,lampDistanceCm:distance};
+}
+function hint(message){$('learning-hint').hidden=!message;$('learning-hint-text').textContent=message||'';}
+function refreshHint(extra=''){hint(extra||setupHint(current().assembly)||seriesHint(current().series));}
+function endObservation(b=current()){
+ if(b.observationStart===null)return;
+ b.series=finishObservation(b.series,{...condition(b),invalidated:b.measurementChanged},b.stopwatch.elapsed-b.observationStart);
+ b.observationStart=null;b.measurementChanged=false;
+}
+function syncPhysics(b=current()){
+ const connected=deriveSetup(b.assembly);
+ b.simulation.set('light',lightAtDistance(lampDistanceCm(b.assembly)));
+ b.simulation.set('carbon',b.settings.carbon);
+ b.simulation.set('lampOn',connected.lampPresent&&b.settings.lampOn);
+ b.simulation.set('temperature',connected.waterbathConnected?b.settings.temperature:20);
+}
+function updateTimer(){
+ const b=current(),watch=b.stopwatch,t=formatTime(watch.elapsed),placed=!!b.assembly.items.stopwatch;
+ const phase=watch.finished?'finished':watch.warning&&watch.running?'warning':watch.running?'running':watch.elapsed?'paused':'ready';
+ for(const id of ['stopwatch-panel','compact-clock']){$(id).hidden=!placed;$(id).classList.toggle('timer-warning',phase==='warning');$(id).classList.toggle('timer-finished',phase==='finished');}
+ $('timer-value').innerHTML=t.main+'<span>,'+t.fraction+'</span>';
+ $('timer-value').setAttribute('aria-label',t.main+','+t.fraction+' Minuten und Sekunden');
+ $('timer-compact-value').textContent=t.main+','+t.fraction;
+ for(const id of ['timer-toggle','timer-compact-toggle']){$(id).textContent=watch.running?'Stopp':watch.elapsed&&!watch.finished?'Weiter':'Start';$(id).disabled=!placed||!b.simulation.running||watch.finished;}
+ $('timer-state').textContent=watch.finished?'Beendet':watch.running?'Läuft':watch.elapsed?'Angehalten':'Bereit';
+ const notice=watch.finished?'60 Sekunden erreicht. Versuch pausiert. Für den nächsten Durchlauf nullstellen.':watch.warning?'Letzte 5 Sekunden – Messzeit endet bei 60 Sekunden.':'Messzeit: 60 Sekunden';
+ for(const id of ['timer-notice','timer-compact-notice'])if($(id).textContent!==notice)$(id).textContent=notice;
+ if(phase!==b.timerPhase){
+  if(phase==='warning')$('timer-announcement').textContent=WARNING_SECONDS+' Sekunden erreicht. Noch '+(MEASUREMENT_SECONDS-WARNING_SECONDS)+' Sekunden.';
+  else if(phase==='finished')$('timer-announcement').textContent=MEASUREMENT_SECONDS+' Sekunden erreicht. Der Versuch ist pausiert.';
+  else $('timer-announcement').textContent='';
+  b.timerPhase=phase;
+ }
+}
+function cancelObservation(b=current()){
+ b.series={...b.series,active:null,lastIssue:''};b.observationStart=null;b.measurementChanged=false;
+}
+function completeMeasurement(b=current()){
+ endObservation(b);b.simulation.setRunning(false);updateUI();refreshHint();
+ flash('60 Sekunden erreicht. Der Versuch ist pausiert. Stelle die Stoppuhr für den nächsten Durchlauf auf null.');
+}
+
+function updateUI(){
+ const b=current(),s=b.simulation.snapshot(),d=deriveSetup(b.assembly),exp=EXPERIMENTS.find(e=>e.id===activeId);
+ $('bench-title').textContent=exp.title;
+ document.querySelectorAll('[data-experiment]').forEach(el=>el.setAttribute('aria-current',String(el.dataset.experiment===activeId)));
+ document.querySelectorAll('[data-switch-experiment]').forEach(el=>{const id=el.dataset.switchExperiment,isCurrent=id===activeId,hasSetup=Object.keys(benches.get(id).assembly.items).length>0;el.setAttribute('aria-current',String(isCurrent));el.querySelector('.choice-status').textContent=isCurrent?'Aktuell geöffnet':hasSetup?'Aufbau vorhanden':'Leerer Arbeitsplatz';});
+ document.querySelectorAll('[data-material]').forEach(el=>{const id=el.dataset.material;el.hidden=!exp.availableMaterials.includes(id);el.classList.toggle('present',present(b,id));el.setAttribute('aria-pressed',String(id===b.selected));});
+ const enabled={carbon:d.carbonSupplyPresent&&d.waterPresent,temperature:d.waterbathConnected};
+ for(const key of CONFIG.enabledFactors){document.querySelector('[data-factor="'+key+'"]').hidden=key!==activeId;if(key==='light')continue;const input=$(key);input.disabled=key!==activeId||!enabled[key];input.value=b.settings[key];input.style.setProperty('--fill',((b.settings[key]-Number(input.min))/(Number(input.max)-Number(input.min))*100)+'%');$(key+'-value').innerHTML=b.settings[key]+' <small>'+(key==='temperature'?'°C':'%')+'</small>';}
+ $('light-device-state').textContent=d.lampPresent?'Aufgestellt':'Nicht aufgestellt';$('carbon-device-state').textContent=enabled.carbon?'Vorrat aufgestellt':'Nicht verbunden';$('temperature-device-state').textContent=!d.bathPresent?'Nicht aufgestellt':!b.assembly.bathWater?'Wasserbad leer':d.waterbathConnected?'Wasserkontakt zum Gläschen':'Ohne Wasserkontakt zum Gläschen';
+ $('lamp-button').disabled=!d.lampPresent;$('lamp-button').setAttribute('aria-checked',String(d.lampPresent&&b.settings.lampOn));
+ const selected=materialById.get(b.selected);$('selected-name').textContent=selected?.label||'Kein Material gewählt';$('selected-description').textContent=b.pending==='water'?'Wasser in das Gläschen oder in das Wasserbad geben.':b.pending==='plant'?'Die Wasserpest in das Gläschen einsetzen.':b.pending?'Auf der Arbeitsfläche ablegen.':selected?'Auf der Arbeitsfläche verschiebbar oder zurücklegbar.':'Die Arbeitsfläche ist frei gestaltbar.';
+ $('remove-material').hidden=!selected||!present(b,b.selected);$('remove-material').textContent=b.selected==='water'?'Wasser aus Gefäßen entfernen':b.selected==='beaker'&&(b.assembly.water||b.assembly.plant)?'Gefäß mit Inhalt zurücklegen':'Zurücklegen';
+ $('lamp-power').hidden=b.selected!=='lamp'||!d.lampPresent;$('lamp-power').textContent=b.settings.lampOn?'Leuchte ausschalten':'Leuchte einschalten';$('lamp-power').setAttribute('aria-pressed',String(b.settings.lampOn));
+ $('run-label').textContent=b.stopwatch.finished&&d.stopwatchPresent?'60 Sekunden erreicht':s.running?'Versuch pausieren':'Versuch starten';$('run-button').disabled=!scene||(d.stopwatchPresent&&b.stopwatch.finished);$('run-button').querySelector('.play-icon').textContent=s.running?'Ⅱ':'▶';$('run-status').innerHTML='<i></i>'+(s.running?'Läuft':s.time?'Pausiert':'Aufbau');$('run-status').classList.toggle('active',s.running);
+ $('zoom-button').disabled=!d.beakerPresent;$('zoom-button').setAttribute('aria-pressed',String(b.zoom));$('zoom-button').querySelector('span').textContent=b.zoom?'Gesamtansicht':'Nahansicht';
+ $('empty-bench').hidden=Object.keys(b.assembly.items).length>0;
+ $('placement-label').textContent=b.pending==='water'?'Wasser zugeben':b.pending?selected.label+' ablegen':b.assembly.plant?'Bläschen am Stiel':'Material frei platzieren';
+ $('scene').classList.toggle('placing',!!b.pending);$('thermometer-panel').hidden=!d.thermometerPresent;
+ marker.hidden=!b.keyboard||!b.pending;marker.style.left=b.cursor.x*100+'%';marker.style.top=b.cursor.y*100+'%';
+ updateReadouts();updateTimer();
+}
+function updateReadouts(){const b=current(),d=deriveSetup(b.assembly),distance=lampDistanceCm(b.preview||b.assembly);$('light-value').innerHTML=(distance===null?'—':n1(distance))+' <small>cm</small>';$('actual-temperature').textContent=d.thermometerConnected?n1(b.simulation.snapshot().temperature)+' °C':'— °C';}
+function pause(message){const b=current();b.simulation.setRunning(false);b.stopwatch.stop();updateUI();refreshHint();if(message){$('visibility-message').hidden=false;flash(message);}}
+function selectMaterial(id,keyboard=false){const b=current();pause();b.selected=id;b.pending=id==='water'?'water':present(b,id)?null:id;b.keyboard=keyboard;if(keyboard){b.zoom=false;$('scene').focus({preventScroll:true});}flash('');updateUI();}
+function commit(result){const b=current();if(!result.ok){flash(result.message);hint(result.message);return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;if(b.observationStart!==null&&(JSON.stringify(before)!==JSON.stringify(condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
+function clearGesture(){if(gesture){try{gesture.target.releasePointerCapture(gesture.id);}catch{}gesture=null;}current().preview=null;$('drag-ghost').hidden=true;$('scene').classList.remove('dragging');}
+function chooseExperiment(id){if(!benches.has(id)||id===activeId)return;clearGesture();pause();activeId=id;$('timer-announcement').textContent='';last=performance.now();$('visibility-message').hidden=true;flash('');syncPhysics();updateUI();refreshHint();}
+$('experiment-tabs').addEventListener('click',e=>{const tab=e.target.closest('[data-experiment]');if(tab)chooseExperiment(tab.dataset.experiment);});
+$('experiment-choices').addEventListener('click',e=>{const choice=e.target.closest('[data-switch-experiment]');if(!choice)return;$('experiment-dialog').close();chooseExperiment(choice.dataset.switchExperiment);$('experiment-switch').focus({preventScroll:true});});
+function startGesture(e,kind,id,target){if(e.button!==0||!scene)return;e.preventDefault();if(gesture)clearGesture();pause();const point=world(e),item=current().assembly.items[id];const grabOffset=kind==='existing'&&item?{x:point.x-item.x,y:point.y-item.y}:{x:0,y:0};gesture={id:e.pointerId,material:id,kind,startX:e.clientX,startY:e.clientY,moved:false,target,grabOffset};target.setPointerCapture(e.pointerId);}
+document.querySelectorAll('[data-material]').forEach(button=>{
+ button.addEventListener('pointerdown',e=>{if(e.button!==0)return;selectMaterial(button.dataset.material);startGesture(e,'tray',button.dataset.material,button);});
+ button.addEventListener('click',e=>{if(e.detail===0)selectMaterial(button.dataset.material,true);});
+});
+function insideCanvas(e){const r=$('scene').getBoundingClientRect();return e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom;}
+function world(e){const b=current();return scene.screenToWorld(e.clientX,e.clientY,{setup:b.assembly,zoom:b.zoom});}
+function dragPoint(e){const p=world(e),offset=gesture?.grabOffset||{x:0,y:0};return {x:p.x-offset.x,y:p.y-offset.y};}
+$('scene').addEventListener('pointerdown',e=>{if(e.button!==0||!scene)return;const b=current();b.keyboard=false;const p=world(e);b.cursor={...p};const hit=b.pending||scene.hitTest(p,b.assembly);if(!hit){b.selected=null;updateUI();return;}if(!b.pending)b.selected=hit;startGesture(e,b.pending?'new':'existing',hit,$('scene'));updateUI();});
+window.addEventListener('pointermove',e=>{if(!gesture||gesture.id!==e.pointerId)return;const b=current();gesture.moved=gesture.moved||Math.hypot(e.clientX-gesture.startX,e.clientY-gesture.startY)>5;if(!gesture.moved)return;$('scene').classList.add('dragging');const ghost=$('drag-ghost');ghost.hidden=false;ghost.textContent=materialById.get(gesture.material).label;ghost.style.left=e.clientX+'px';ghost.style.top=e.clientY+'px';if(insideCanvas(e)){const p=dragPoint(e);b.cursor={...p};const preview=placeMaterial(b.assembly,gesture.material,p);b.preview=preview.ok?preview.state:null;}else b.preview=null;});
+window.addEventListener('pointerup',e=>{if(!gesture||gesture.id!==e.pointerId)return;const g=gesture,b=current(),drop=insideCanvas(e)&&(g.kind==='new'||g.moved);const p=drop?dragPoint(e):null;clearGesture();if(drop){b.selected=g.material;commit(g.kind==='existing'?moveMaterial(b.assembly,g.material,p):placeMaterial(b.assembly,g.material,p));}else updateUI();});
+window.addEventListener('pointercancel',()=>{clearGesture();updateUI();});
+$('scene').addEventListener('keydown',e=>{const b=current();if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();pause();b.keyboard=true;b.zoom=false;const dx=e.key==='ArrowLeft'?-.02:e.key==='ArrowRight'?.02:0,dy=e.key==='ArrowUp'?-.02:e.key==='ArrowDown'?.02:0;if(b.pending){b.cursor={x:Math.max(.1,Math.min(.9,b.cursor.x+dx)),y:Math.max(.28,Math.min(.8,b.cursor.y+dy))};updateUI();}else if(b.selected&&b.assembly.items[b.selected]){const p=b.assembly.items[b.selected];commit(moveMaterial(b.assembly,b.selected,{x:p.x+dx,y:p.y+dy}));}}else if((e.key==='Enter'||e.key===' ')&&b.pending){e.preventDefault();commit(placeMaterial(b.assembly,b.pending,b.cursor));}else if(e.key==='Delete'&&b.selected){e.preventDefault();removeSelected();}});
+function removeSelected(){const b=current(),id=b.selected;if(!id)return;pause();const r=removeMaterial(b.assembly,id);if(r.ok&&['beaker','water','plant'].includes(id)){b.simulation=createSimulation({settings:b.settings});b.stopwatch.stop();}if(r.ok&&id==='stopwatch'){cancelObservation(b);b.stopwatch.reset();}if(r.ok&&id==='beaker')b.zoom=false;commit(r);}
+$('remove-material').addEventListener('click',removeSelected);
+for(const key of CONFIG.enabledFactors.filter(key=>key!=='light'))$(key).addEventListener('input',e=>{if(key!==activeId||e.target.disabled)return;const b=current(),before=condition(b);b.settings[key]=Number(e.target.value);if(b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();refreshHint(changeHint(before,condition(b)));});
+function toggleLamp(){const b=current();if(!b.assembly.items.lamp)return;const before=condition(b);b.settings.lampOn=!b.settings.lampOn;if(b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();refreshHint(changeHint(before,condition(b)));}
+$('lamp-button').addEventListener('click',toggleLamp);$('lamp-power').addEventListener('click',toggleLamp);
+$('run-button').addEventListener('click',()=>{const b=current();if(b.simulation.running){pause();return;}if(b.stopwatch.finished&&b.assembly.items.stopwatch){flash('Stelle die Stoppuhr für einen neuen Durchlauf auf null.');return;}const validation=validateAssembly(b.assembly);if(!validation.ok){flash(validation.message);hint(validation.message);return;}syncPhysics();b.simulation.setRunning(true);last=performance.now();$('visibility-message').hidden=true;flash('');updateUI();refreshHint();});
+$('zoom-button').addEventListener('click',()=>{const b=current();if(!b.assembly.items.beaker)return;b.zoom=!b.zoom;b.keyboard=false;updateUI();});
+for(const id of ['timer-toggle','timer-compact-toggle'])$(id).addEventListener('click',()=>{const b=current();if(!b.assembly.items.stopwatch||!b.simulation.running||b.stopwatch.finished)return;if(b.stopwatch.running){b.stopwatch.stop();refreshHint();}else{if(b.observationStart===null){b.series=beginObservation(b.series,condition(b));b.observationStart=b.stopwatch.elapsed;b.measurementChanged=false;}b.stopwatch.start();refreshHint();}updateTimer();});
+for(const id of ['timer-reset','timer-compact-reset'])$(id).addEventListener('click',()=>{const b=current();cancelObservation(b);b.stopwatch.reset();flash('');updateUI();refreshHint();});
+function openDialog(id){clearGesture();pause();$(id).showModal();}
+$('model-open').addEventListener('click',()=>openDialog('model-dialog'));$('reset-open').addEventListener('click',()=>openDialog('reset-dialog'));$('experiment-switch').addEventListener('click',()=>openDialog('experiment-dialog'));$('guide-open').addEventListener('click',()=>openDialog('guide-dialog'));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
+$('reset-confirm').addEventListener('click',()=>{clearGesture();benches.set(activeId,fresh(activeId));$('reset-dialog').close();$('visibility-message').hidden=true;flash('Versuchsplatz geleert.');syncPhysics();updateUI();hint('');});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearGesture();if(current().simulation.running)pause('Versuch und Stoppuhr beim Tabwechsel pausiert.');}last=performance.now();});
+function frame(now){const b=current(),dt=Math.max(0,(now-last)/1000);last=now;if(b.simulation.running&&dt>1.5)pause('Darstellung unterbrochen; Versuch pausiert.');if(b.simulation.running){const timed=b.stopwatch.running,step=timed?Math.min(dt,b.stopwatch.remaining):dt;b.simulation.advance(step);b.stopwatch.advance(step);if(timed&&b.stopwatch.finished)completeMeasurement(b);}const s=b.simulation.snapshot(),setup=b.preview||b.assembly;scene?.render({setup,time:s.time,light:lightAtDistance(lampDistanceCm(setup)),pendingMaterial:b.pending,selectedMaterial:b.selected,temperature:s.temperature,lampOn:s.settings.lampOn,bubbles:s.bubbles,running:s.running,zoom:b.zoom,stopwatchElapsed:b.stopwatch.elapsed});if(now-lastReadout>95){updateReadouts();updateTimer();lastReadout=now;}requestAnimationFrame(frame);}
+syncPhysics();updateUI();requestAnimationFrame(frame);
+
+})();</script>
+</body></html>

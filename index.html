@@ -133,7 +133,7 @@
  </section>
  <aside class="instruments" aria-label="Geräte und Einstellungen">
   <section class="instrument selected-material"><p class="eyebrow">AUSWAHL</p><h2 id="selected-name">Kein Material gewählt</h2><p id="selected-description">Die Arbeitsfläche ist frei gestaltbar.</p><button id="remove-material" class="quiet" hidden>Zurücklegen</button><button id="lamp-power" class="quiet" hidden aria-pressed="true">Leuchte ausschalten</button></section>
-  <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><p class="distance-note">Die Leuchte auf der Arbeitsfläche ziehen, um den Abstand zu verändern.</p><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
+  <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><p class="distance-note">Im Lichtversuch lässt sich der Abstand durch Ziehen der Leuchte oder des Gläschens von 10 bis 50 cm einstellen.</p><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
   <section class="instrument" data-factor="carbon" aria-labelledby="carbon-title" hidden><div class="instrument-title"><div><p class="eyebrow">VERSUCHSWASSER</p><h2 id="carbon-title">CO₂-Angebot</h2></div></div><div class="value-line"><label for="carbon">NaHCO₃-Konzentration</label><output id="carbon-value" for="carbon">0 <small>mg/L</small></output></div><input id="carbon" type="range" min="0" max="4" step="1" value="0" aria-label="NaHCO₃-Konzentration im Versuchsansatz"><div class="range-ends"><span>0 mg/L</span><span>15 mg/L</span></div><p class="device-state">Fertige NaHCO₃-Lsg. · 100 mg/L<br><output id="carbon-dose">0,0 mL · auf 10 mL Endvolumen</output></p><p class="device-state">0 mg/L: kein NaHCO₃-Zusatz; das Wasser ist nicht CO₂-frei.</p><p class="device-state" id="carbon-device-state">Nicht verbunden</p></section>
   <section class="instrument" data-factor="temperature" aria-labelledby="temperature-title" hidden><div class="instrument-title"><span class="instrument-icon" aria-hidden="true">°C</span><div><p class="eyebrow">WASSERBAD</p><h2 id="temperature-title">Temperatur</h2></div></div><div class="value-line"><label for="temperature">Sollwert</label><output id="temperature-value" for="temperature">20 <small>°C</small></output></div><input id="temperature" type="range" min="5" max="50" step="1" value="20" aria-label="Solltemperatur des Wasserbads in Grad Celsius"><div class="range-ends"><span>5 °C</span><span>50 °C</span></div><p class="device-state" id="temperature-device-state">Nicht verbunden</p></section>
   <section class="instrument thermometer-readout" id="thermometer-panel" hidden><div class="actual-temperature"><span><i></i>Thermometer</span><output id="actual-temperature">— °C</output></div></section>
@@ -290,20 +290,43 @@
 </script>
 <script>(()=>{
 "use strict";
-const {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance} = (()=>{
+const {VESSEL,LAMP_GEOMETRY,lampMeasurement,limitLightPlacement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance} = (()=>{
 // Shared apparatus geometry in the 960 × 640 logical scene.
 // Centimetres describe the virtual bench, not a calibrated real lamp.
 const VESSEL = Object.freeze({cx:571,cy:322,sx:96/290,sy:186/432});
 const LAMP_GEOMETRY = Object.freeze({cx:204,cy:366,scale:.8});
 // Shared scale for all distance readouts, the ruler and the light input.
 const BENCH_UNITS_PER_CM=12;
+const LAMP_FACE_OFFSET=77;
+const PLANT_OFFSET_X=(566.4-VESSEL.cx)*VESSEL.sx;
 function lampMeasurement(setup){
  const jar=setup?.items?.beaker,lamp=setup?.items?.lamp;
  if(!jar||!lamp)return null;
  const direction=jar.x<lamp.x?-1:1;
- const origin={x:lamp.x*960+direction*77,y:lamp.y*640-112};
- const target={x:jar.x*960+(566.4-VESSEL.cx)*VESSEL.sx,y:jar.y*640+(217.6-VESSEL.cy)*VESSEL.sy};
+ const origin={x:lamp.x*960+direction*LAMP_FACE_OFFSET,y:lamp.y*640-112};
+ const target={x:jar.x*960+PLANT_OFFSET_X,y:jar.y*640+(217.6-VESSEL.cy)*VESSEL.sy};
  return {origin,target,direction,distanceCm:Math.hypot(target.x-origin.x,target.y-origin.y )/BENCH_UNITS_PER_CM};
+}
+// Snap the moved object to the calibrated radius, keeping its height and the other object fixed.
+function limitLightPlacement(setup,id){
+ if(setup.experimentId!=='light'||(id!=='lamp'&&id!=='beaker'))return null;
+ const measured=lampMeasurement(setup);
+ if(!measured)return null;
+ const {distanceCm,origin,target,direction}=measured;
+ const limit=Math.max(10,Math.min(50,distanceCm));
+ if(Math.abs(limit-distanceCm)<1e-9)return null;
+ const vertical=target.y-origin.y;
+ const horizontal=Math.sqrt(Math.max(0,(limit*BENCH_UNITS_PER_CM)**2-vertical**2));
+ const separation=LAMP_FACE_OFFSET+horizontal;
+ const lampX=setup.items.lamp.x*960;
+ for(const side of [direction,-direction]){
+   const x=(id==='lamp'?target.x-side*separation:lampX+side*separation-PLANT_OFFSET_X)/960;
+   if(x>=.1-1e-12&&x<=.9+1e-12){
+     setup.items[id].x=Math.max(.1,Math.min(.9,x));
+     return limit;
+   }
+ }
+ throw new RangeError('Lampenabstand außerhalb der Arbeitsfläche.');
 }
 const lampDistanceCm=setup=>lampMeasurement(setup)?.distanceCm??null;
 function lampAngleDeg(setup){
@@ -318,7 +341,7 @@ function lampAlignmentHint(setup,lampOn=true){
 }
 function lightAtDistance(distanceCm){return distanceCm==null?0:100/(1+(Math.max(0,distanceCm)/10)**2);}
 
-return {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance};})();
+return {VESSEL,LAMP_GEOMETRY,lampMeasurement,limitLightPlacement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance};})();
 const {createSeries,beginObservation,finishObservation,seriesHint,changeHint} = (()=>{
 // Formative hints use only experimental settings and elapsed observation time.
 // Bubble counts, calculated rates and students' written results are never stored.
@@ -501,6 +524,8 @@ function placeMaterial(state,id,point){
     if(id==='beaker')jar.y=clamp(bath.y+.005,.28,.8);
     else bath.y=clamp(jar.y-.005,.28,.8);
   }
+  const limit=limitLightPlacement(next,id);
+  if(limit!==null)return result(next,true,'Lichtversuch: Abstand auf '+limit+' cm begrenzt.');
   return result(next,true,material.label+(state.items[id]?' verschoben.':' aufgestellt.'));
 }
 
